@@ -6,7 +6,7 @@
 ### Work Experience
 
 Insights and Data Analytics Intern at Forbes Tate Partners <br />
-* Advised legislative campaign strategy by designing media analytics dashboards and visualizing opinion data from the public and 17,000 Beltway policy insiders using Quid, Netbase and PowerPoint, contributing to 5 multi-million-dollar campaigns in healthcare and substance regulation
+* Advised legislative campaign strategy by designing media analytics dashboards and visualizing opinion data from the public and 17,000 Beltway policy insiders using Quid, Netbase and PowerPoint, contributing to 5 multi-million-dollar campaigns in healthcare and substance regulation.
 
 Professional Development Intern at Singapore Ministry of Education <br />
 * Proposed interactive visual tools to clarify Professional Development experiences for teachers in 136 public schools by analyzing PD processes for Year Heads and Schools.<br />
