@@ -1,22 +1,44 @@
-# Mathematics Educator and Writer
+# David Goh
 
-### Education 
+A minimal academic homepage built with React and Tailwind CSS, deployed to GitHub Pages.
 
-* B.Sc Mathematics and B.A. Public Policy, Duke University
+## Local Development
 
-### Work Experience
+To work on this site locally:
 
-Insights and Data Analytics Intern at Forbes Tate Partners  
-* Advised legislative campaign strategy by designing media analytics dashboards and visualizing opinion data from the public and 17,000 Beltway policy insiders using Quid, Netbase and PowerPoint, contributing to 5 multi-million-dollar campaigns in healthcare and substance regulation.
-* Proposed interactive visual tools to clarify Professional Development experiences for teachers in 136 public schools by analyzing PD processes for Year Heads and Schools.
-* Oversaw transition in Monitoring & Evaluation methods in School Guidance by creating in-house tutorials for qualitative analysis and advising data visualization for Termly check-in surveys, impacting public schools nationwide. 
+```bash
+# Clone the webdev project (not this repository)
+gh repo clone davidcagoh/davidcagoh-site-refresh
 
-Ministry of Education, Republic of Singapore, Teaching Intern (Math & Physics)  
-* Completed Introduction to Teaching Programme in 2019, a weeklong intensive on the ethos of the profession, and the fundamentals of teaching.  
-* Improved motivation of 60 grade school students at St. Margaret’s Secondary School by designing lessons and teaching materials for Trigonometry and Physical Science.  
-* Advised School Principal and Planning Committee on raising efficacy of Education and Career Guidance resources by conducting focus group discussions involving 15 students.
+cd davidcagoh-site-refresh
 
-### Projects
+# Install dependencies
+pnpm install
 
-Instructional Design with Social Maps
-* Prototyping learner-centric curriculum for financial literacy nonprofit by designing social plane schematics with Figma/Figjam
+# Start the dev server
+pnpm dev
+
+# Build for production
+pnpm build
+```
+
+The built output goes to `dist/public/`. To deploy, copy those files to the `davidcagoh.github.io` repository root and push.
+
+## Deployment
+
+This repository serves as the GitHub Pages deployment target. The source code lives in the separate `davidcagoh-site-refresh` project.
+
+To update the site:
+
+1. Make changes in the `davidcagoh-site-refresh` project
+2. Run `pnpm build`
+3. Copy `dist/public/*` to this repository
+4. Commit and push
+
+The site will be live at `https://davidcagoh.github.io/` within seconds.
+
+## Future Work
+
+- Add the four forthcoming projects or preprints to the "Work forthcoming" section
+- Refine project descriptions based on final abstracts
+- Consider adding a contact form or email link
