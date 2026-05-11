@@ -5,7 +5,13 @@ asymmetric composition, quiet authority, and text-led hierarchy. Every section m
 reinforce the user's identity as a principled mathematician and purposeful builder.
 */
 
-import { ArrowUpRight, BookOpenText, Building2, Github, Linkedin, NotebookPen } from "lucide-react";
+import { ArrowUpRight, BookOpenText, Building2, Linkedin, NotebookPen } from "lucide-react";
+import { Link } from "wouter";
+import {
+  buildingProjects,
+  mathematicsProjects,
+  type Project,
+} from "@/data/projects";
 
 const publicLinks = [
   {
@@ -20,36 +26,124 @@ const publicLinks = [
   },
 ];
 
-const currentProjects = [
-  {
-    title: "information-bottleneck-nested-optimizers",
-    kind: "Python repository",
-    href: "https://github.com/davidcagoh/information-bottleneck-nested-optimizers",
-    description:
-      "Technical work at the intersection of optimization and information-theoretic thinking.",
-  },
-  {
-    title: "tda-for-time-series",
-    kind: "Jupyter notebook repository",
-    href: "https://github.com/davidcagoh/tda-for-time-series",
-    description:
-      "An exploratory mathematical-computational project connecting topology and time-series analysis.",
-  },
-  {
-    title: "adaptive-quiz-personality",
-    kind: "Python repository",
-    href: "https://github.com/davidcagoh/adaptive-quiz-personality",
-    description:
-      "A project oriented toward adaptive systems, modelling, and practical educational design questions.",
-  },
-];
+function StatusChips({ status }: { status: Project["status"] }) {
+  return (
+    <div className="flex flex-wrap items-center gap-1.5">
+      {status.map((s) => (
+        <span
+          key={s}
+          className="metadata-label inline-flex items-center border border-ink/15 bg-paper-panel px-2 py-1"
+        >
+          {s}
+        </span>
+      ))}
+    </div>
+  );
+}
 
-const reservedWork = [
-  "Recent project or preprint I",
-  "Recent project or preprint II",
-  "Recent project or preprint III",
-  "Recent project or preprint IV",
-];
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const ordinal = String(index + 1).padStart(2, "0");
+
+  const inner = (
+    <>
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <p className="metadata-label">{ordinal}</p>
+          <h3 className="mt-1 font-display text-[1.55rem] leading-tight text-foreground transition-colors group-hover:text-primary sm:text-[1.75rem]">
+            {project.title}
+          </h3>
+        </div>
+        {(project.detailPath || project.primary) && (
+          <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+        )}
+      </div>
+      <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-[0.98rem]">
+        {project.pitch}
+      </p>
+      {project.highlights.length > 0 && (
+        <ul className="mt-3 space-y-1 text-sm leading-6 text-foreground/75">
+          {project.highlights.map((h) => (
+            <li key={h} className="before:mr-2 before:text-muted-foreground before:content-['—']">
+              {h}
+            </li>
+          ))}
+        </ul>
+      )}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <StatusChips status={project.status} />
+        {project.primary && !project.detailPath && (
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-primary">
+            {project.primary.label} →
+          </span>
+        )}
+        {project.detailPath && (
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-primary">
+            Read more →
+          </span>
+        )}
+      </div>
+    </>
+  );
+
+  const sharedClass =
+    "group block border-paper-edge bg-card px-5 py-5 shadow-paper transition-colors sm:px-6";
+
+  if (project.detailPath) {
+    return (
+      <Link href={project.detailPath} className={sharedClass}>
+        {inner}
+      </Link>
+    );
+  }
+
+  if (project.primary) {
+    return (
+      <a
+        href={project.primary.href}
+        target="_blank"
+        rel="noreferrer"
+        className={sharedClass}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return <div className={sharedClass}>{inner}</div>;
+}
+
+function ProjectSection({
+  kicker,
+  heading,
+  blurb,
+  items,
+  startIndex,
+}: {
+  kicker: string;
+  heading: string;
+  blurb: string;
+  items: Project[];
+  startIndex: number;
+}) {
+  return (
+    <div className="border-paper-edge bg-paper-panel px-6 py-7 shadow-paper sm:px-8">
+      <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="section-kicker">{kicker}</p>
+          <h2 className="font-display text-3xl leading-tight text-foreground sm:text-[2.4rem]">
+            {heading}
+          </h2>
+        </div>
+        <p className="max-w-md text-sm leading-6 text-muted-foreground">{blurb}</p>
+      </div>
+      <div className="mt-5 grid gap-4 md:grid-cols-2">
+        {items.map((project, i) => (
+          <ProjectCard key={project.slug} project={project} index={startIndex + i} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -139,97 +233,53 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-8 xl:grid-cols-[0.88fr_1.12fr] xl:items-start">
-              <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
-                <p className="section-kicker">Elsewhere</p>
-                <div className="mt-4 space-y-4">
-                  {publicLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group block border-b border-ink/10 pb-4 last:border-b-0 last:pb-0"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h2 className="font-display text-2xl leading-tight text-foreground transition-colors group-hover:text-primary">
-                            {link.label}
-                          </h2>
-                          <p className="mt-2 max-w-sm text-sm leading-6 text-muted-foreground">
-                            {link.description}
-                          </p>
-                        </div>
-                        <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+            <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
+              <p className="section-kicker">Elsewhere</p>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {publicLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block border-b border-ink/10 pb-4 sm:border-b-0 sm:border-r sm:pb-0 sm:pr-4 sm:last:border-r-0 sm:last:pr-0"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h2 className="font-display text-2xl leading-tight text-foreground transition-colors group-hover:text-primary">
+                          {link.label}
+                        </h2>
+                        <p className="mt-2 max-w-sm text-sm leading-6 text-muted-foreground">
+                          {link.description}
+                        </p>
                       </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
-                <p className="section-kicker">Selected public work</p>
-                <div className="mt-5 space-y-5">
-                  {currentProjects.map((project, index) => (
-                    <a
-                      key={project.title}
-                      href={project.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group block border-b border-ink/10 pb-5 transition-colors last:border-b-0 last:pb-0"
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <p className="metadata-label">{String(index + 1).padStart(2, "0")} / {project.kind}</p>
-                          <h3 className="mt-1 font-display text-[1.75rem] leading-tight text-foreground transition-colors group-hover:text-primary sm:text-[2rem]">
-                            {project.title}
-                          </h3>
-                          <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-[0.98rem]">
-                            {project.description}
-                          </p>
-                        </div>
-                        <Github className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="border-paper-edge bg-paper-panel px-6 py-7 shadow-paper sm:px-8">
-              <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="section-kicker">Work forthcoming</p>
-                  <h2 className="font-display text-3xl leading-tight text-foreground sm:text-[2.4rem]">
-                    Four recent projects or preprints
-                  </h2>
-                </div>
-                <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                  This space is reserved for work not yet placed on GitHub or LinkedIn. We
-                  can walk through those pieces and replace these placeholders later.
-                </p>
-              </div>
-
-              <div className="mt-5 grid gap-4 md:grid-cols-2">
-                {reservedWork.map((item, index) => (
-                  <div key={item} className="relative overflow-hidden border-paper-edge bg-card px-5 py-5">
-                    <p className="metadata-label">Reserved entry {index + 1}</p>
-                    <h3 className="mt-2 font-display text-2xl leading-tight text-foreground">
-                      {item}
-                    </h3>
-                    <p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">
-                      Placeholder for a project note, preprint abstract, or short account of
-                      what was built, written, or discovered.
-                    </p>
-                  </div>
+                      <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>
 
+            <ProjectSection
+              kicker="Mathematics"
+              heading="Papers and proofs"
+              blurb="Formal and theoretical work, mostly machine-checked, mostly in flight."
+              items={mathematicsProjects}
+              startIndex={0}
+            />
+
+            <ProjectSection
+              kicker="Building"
+              heading="Systems in use"
+              blurb="Software shipped to real users — students, family, myself — and the lessons that fell out."
+              items={buildingProjects}
+              startIndex={mathematicsProjects.length}
+            />
+
             <div className="flex items-start justify-between gap-6 border-t border-ink/10 px-1 pt-4">
               <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-                I am interested in mathematics, institutions, and the craft of building
-                things that clarify difficult questions in education.
+                Mathematics, the institutions that decide what gets built, and the craft
+                of building things that clarify difficult questions in education.
               </p>
               <a
                 href="https://www.linkedin.com/in/davidcagoh?utm_source=share_via&utm_content=profile&utm_medium=member_ios"

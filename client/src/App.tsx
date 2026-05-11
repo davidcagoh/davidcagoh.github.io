@@ -5,12 +5,18 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import AdaptiveLearner from "./pages/work/AdaptiveLearner";
+import CitationNetworks from "./pages/work/CitationNetworks";
+import MetaPriors from "./pages/work/MetaPriors";
 
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/work/adaptive-learner"} component={AdaptiveLearner} />
+      <Route path={"/work/citation-networks"} component={CitationNetworks} />
+      <Route path={"/work/meta-priors"} component={MetaPriors} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
