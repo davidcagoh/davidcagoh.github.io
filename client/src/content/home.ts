@@ -27,7 +27,7 @@ export const home = {
   bio: [
     "I want to be a force that shapes education. To that end, I will lead, build, and write.",
     "I am a Master of Science in Applied Computing (Applied Mathematics) student at the University of Toronto and a Singapore Public Service Commission (Teaching Service) Scholar on a public-sector leadership grooming path that begins after my studies.",
-    "In the meantime, I am trying to become both an able and principled mathematician and an able and purposeful builder.",
+    "In the meantime, I am trying to become both an able mathematician and an able and purposeful builder.",
   ],
 
   // Three small chips in the sidebar (each gets its own icon, in order:
@@ -46,8 +46,8 @@ export const home = {
   orientation: {
     kicker: "Orientation",
     paragraphs: [
-      "My long-run interest is in helping shape education through public leadership, institution-building, and careful thought. Mathematics grounds how I reason. Building lets me test ideas in practice. Writing helps me clarify what is worth doing.",
-      "I tend to wander sideways from whatever I'm assigned — a class topic becomes three side projects, an old undergrad result wants to be revived, a tool I built for myself becomes the paper. The work below is grouped by the thread it sits on, not by topic.",
+      "My long-run interest is in helping shape education through public leadership, institution-building, and careful thought. In the meantime, I write a lot to clarify my ideas and find little ways to test them.",
+      "I tend to wander sideways from whatever I'm assigned. You'll see below that 80% of my brainpower is spent on sidequests spun off from something I read, overheard, or was trying to build so I could do less work. I'm sorry it isn't any neater; I guess that's me.",
     ],
     currentStudyLabel: "Current study",
     currentStudyLines: [
