@@ -1,12 +1,12 @@
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "wouter";
-import type { ProjectStatus } from "@/data/projects";
+type StatusChip = string;
 
 interface WorkLayoutProps {
   title: string;
   kicker: string;
-  status: ProjectStatus[];
+  status: StatusChip[];
   lede: string;
   children: ReactNode;
 }

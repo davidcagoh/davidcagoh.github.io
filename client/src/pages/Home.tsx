@@ -7,11 +7,7 @@ reinforce the user's identity as a principled mathematician and purposeful build
 
 import { ArrowUpRight, BookOpenText, Building2, Linkedin, NotebookPen } from "lucide-react";
 import { Link } from "wouter";
-import {
-  buildingProjects,
-  mathematicsProjects,
-  type Project,
-} from "@/data/projects";
+import { threads, type Thread } from "@/data/threads";
 
 const publicLinks = [
   {
@@ -26,122 +22,35 @@ const publicLinks = [
   },
 ];
 
-function StatusChips({ status }: { status: Project["status"] }) {
+function ThreadCard({ thread }: { thread: Thread }) {
   return (
-    <div className="flex flex-wrap items-center gap-1.5">
-      {status.map((s) => (
-        <span
-          key={s}
-          className="metadata-label inline-flex items-center border border-ink/15 bg-paper-panel px-2 py-1"
-        >
-          {s}
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const ordinal = String(index + 1).padStart(2, "0");
-
-  const inner = (
-    <>
-      <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0 flex-1">
-          <p className="metadata-label">{ordinal}</p>
-          <h3 className="mt-1 font-display text-[1.55rem] leading-tight text-foreground transition-colors group-hover:text-primary sm:text-[1.75rem]">
-            {project.title}
-          </h3>
+    <Link
+      href={thread.path}
+      className="group flex h-full flex-col justify-between border-paper-edge bg-card px-6 py-6 shadow-paper transition-colors sm:px-7 sm:py-7"
+    >
+      <div>
+        <div className="flex items-start justify-between gap-4">
+          <p className="metadata-label">{thread.kicker}</p>
+          <ArrowUpRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
         </div>
-        {(project.detailPath || project.primary) && (
-          <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
-        )}
+        <h3 className="mt-2 font-display text-[1.75rem] leading-tight text-foreground transition-colors group-hover:text-primary sm:text-[2rem]">
+          {thread.title}
+        </h3>
+        <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-[0.98rem]">
+          {thread.lede}
+        </p>
       </div>
-      <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-[0.98rem]">
-        {project.pitch}
-      </p>
-      {project.highlights.length > 0 && (
-        <ul className="mt-3 space-y-1 text-sm leading-6 text-foreground/75">
-          {project.highlights.map((h) => (
-            <li key={h} className="before:mr-2 before:text-muted-foreground before:content-['—']">
-              {h}
-            </li>
-          ))}
-        </ul>
-      )}
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <StatusChips status={project.status} />
-        {project.primary && !project.detailPath && (
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-primary">
-            {project.primary.label} →
+      <div className="mt-5 flex flex-wrap gap-1.5">
+        {thread.chips.map((c) => (
+          <span
+            key={c}
+            className="metadata-label inline-flex items-center border border-ink/15 bg-paper-panel px-2 py-1"
+          >
+            {c}
           </span>
-        )}
-        {project.detailPath && (
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-primary">
-            Read more →
-          </span>
-        )}
-      </div>
-    </>
-  );
-
-  const sharedClass =
-    "group block border-paper-edge bg-card px-5 py-5 shadow-paper transition-colors sm:px-6";
-
-  if (project.detailPath) {
-    return (
-      <Link href={project.detailPath} className={sharedClass}>
-        {inner}
-      </Link>
-    );
-  }
-
-  if (project.primary) {
-    return (
-      <a
-        href={project.primary.href}
-        target="_blank"
-        rel="noreferrer"
-        className={sharedClass}
-      >
-        {inner}
-      </a>
-    );
-  }
-
-  return <div className={sharedClass}>{inner}</div>;
-}
-
-function ProjectSection({
-  kicker,
-  heading,
-  blurb,
-  items,
-  startIndex,
-}: {
-  kicker: string;
-  heading: string;
-  blurb: string;
-  items: Project[];
-  startIndex: number;
-}) {
-  return (
-    <div className="border-paper-edge bg-paper-panel px-6 py-7 shadow-paper sm:px-8">
-      <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="section-kicker">{kicker}</p>
-          <h2 className="font-display text-3xl leading-tight text-foreground sm:text-[2.4rem]">
-            {heading}
-          </h2>
-        </div>
-        <p className="max-w-md text-sm leading-6 text-muted-foreground">{blurb}</p>
-      </div>
-      <div className="mt-5 grid gap-4 md:grid-cols-2">
-        {items.map((project, i) => (
-          <ProjectCard key={project.slug} project={project} index={startIndex + i} />
         ))}
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -207,12 +116,18 @@ export default function Home() {
             <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
               <p className="section-kicker">Orientation</p>
               <div className="mt-4 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
-                <div>
+                <div className="space-y-4">
                   <p className="text-lg leading-8 text-foreground/90">
                     My long-run interest is in helping shape education through public
                     leadership, institution-building, and careful thought. Mathematics
-                    grounds how I reason. Building lets me test ideas in practice. Writing
-                    helps me clarify what is worth doing.
+                    grounds how I reason. Building lets me test ideas in practice.
+                    Writing helps me clarify what is worth doing.
+                  </p>
+                  <p className="text-base leading-7 text-foreground/80">
+                    I tend to wander sideways from whatever I'm assigned — a class topic
+                    becomes three side projects, an old undergrad result wants to be
+                    revived, a tool I built for myself becomes the paper. The work below
+                    is grouped by the thread it sits on, not by topic.
                   </p>
                 </div>
                 <div className="space-y-4 border-t border-ink/10 pt-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
@@ -260,21 +175,25 @@ export default function Home() {
               </div>
             </div>
 
-            <ProjectSection
-              kicker="Mathematics"
-              heading="Papers and proofs"
-              blurb="Formal and theoretical work, mostly machine-checked, mostly in flight."
-              items={mathematicsProjects}
-              startIndex={0}
-            />
-
-            <ProjectSection
-              kicker="Building"
-              heading="Systems in use"
-              blurb="Software shipped to real users — students, family, myself — and the lessons that fell out."
-              items={buildingProjects}
-              startIndex={mathematicsProjects.length}
-            />
+            <div className="border-paper-edge bg-paper-panel px-6 py-7 shadow-paper sm:px-8">
+              <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="section-kicker">Threads</p>
+                  <h2 className="font-display text-3xl leading-tight text-foreground sm:text-[2.4rem]">
+                    Four lines of work
+                  </h2>
+                </div>
+                <p className="max-w-md text-sm leading-6 text-muted-foreground">
+                  Each card opens a side page that walks through the projects on that
+                  thread, what produced them, and where they stand.
+                </p>
+              </div>
+              <div className="mt-5 grid gap-4 md:grid-cols-2">
+                {threads.map((t) => (
+                  <ThreadCard key={t.slug} thread={t} />
+                ))}
+              </div>
+            </div>
 
             <div className="flex items-start justify-between gap-6 border-t border-ink/10 px-1 pt-4">
               <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
