@@ -1,8 +1,8 @@
-A single deep learning theory class taught me information bottleneck theory and how optimisers actually differ from each other. I refused to leave either idea alone. The class became an inductive-bottlenecks umbrella manuscript with three formal sub-studies, and a Bayesian adaptive-learning engine.
+Vardan Papyan's Deep Learning Theory class was probably the most intellectually engaged yet least stressed I've ever felt in a course. Often I would daydream: about information bottleneck theory, various ML optimizers, and end up blogging about it on Substack... or in this case, spin up agents to finish a few projects.
 
-## The seed
+## Seeds of ideas
 
-The class introduced two things I kept thinking about. First, the Information Bottleneck reading of representation learning — the idea that what a network learns can be characterised by what it throws away. Second, the menagerie of optimisers (AdamW, GDM, more exotic nested ones) and the fact that they actually *do different things* in the loss landscape. Both ideas generated their own line of work.
+First, the Information Bottleneck reading of representation learning — the idea that what a network learns can be characterised by what it throws away. Second, the menagerie of optimisers (AdamW, GDM, more exotic nested ones) and the fact that they actually *do different things* in the loss landscape. Both ideas generated their own line of work.
 
 ## Meta-priors umbrella
 
@@ -14,15 +14,15 @@ Tichy & Saxe's deep linear model is a clean setting in which to ask whether a ne
 
 [information-bottleneck-nested-optimizers on GitHub →](https://github.com/davidcagoh/information-bottleneck-nested-optimizers)
 
-### Random Fourier features
+### Persistent homology and Topological Data Analysis (TDA)
 
-Replace the front of an MLP with a fixed RFF map plus a linear head. On the regression target tested, this reaches a test MSE of **1.3 × 10⁻⁴ with 21 parameters**, against a 301-parameter MLP. Sample frequencies from a chosen kernel spectrum, never train them, and you buy interpretability and a 14× parameter reduction.
-
-### Persistent homology — the Bendich revival
-
-The third sub-study is the revived undergraduate TDA project from [thread two](/threads/resurrected-from-duke). Persistence features classify dynamical regimes at 95% accuracy but do not help local one-step prediction. Sharp in one direction, flat in the other — and that asymmetry is exactly what the IB framing predicts about a prior whose information channel is regime-coarse.
+At one point while at Duke I think I might have been the top undergraduate in this unfortunately not-very-useful field. See [thread two](/threads/resurrected-from-duke). Here we show persistence features classify dynamical regimes at 95% accuracy but do not help local one-step prediction. Sharp in one direction, flat in the other — and that asymmetry is exactly what the IB framing predicts about a prior whose information channel is regime-coarse.
 
 [tda-for-time-series on GitHub →](https://github.com/davidcagoh/tda-for-time-series)
+
+### Random Fourier features
+
+Replace the front of an MLP with a fixed RFF map plus a linear head. On the regression target tested, this reaches a test MSE of **1.3 × 10⁻⁴ with 21 parameters**, against a 301-parameter MLP. Sample frequencies from a chosen kernel spectrum, never train them, and you buy interpretability and a 14× parameter reduction. Yay?
 
 ## Adaptive-learning engine — the optimiser thread continued
 
@@ -36,6 +36,6 @@ The first stress test was an MBTI quiz. The engine reaches the same predicted ty
 
 The user-facing applications of the engine — the Khan-style mastery dashboard pipeline in particular — sit on [thread four](/threads/built-for-people).
 
-## Pattern
+## Tl;dr
 
-One class produced an umbrella manuscript, three formal sub-studies, the revival of a Duke project, and a shipped engine that doesn't look like it has anything to do with deep learning theory until you trace where the optimiser intuitions came from. The seed was small. The branching was the work.
+I love daydreaming

@@ -2,19 +2,19 @@ Tools made for specific people who needed them — cohort-mates in the MScAC pro
 
 ## MScAC initiatives
 
-Three operational tools I built in my free time to help my University of Toronto MScAC cohort. They worked, students used them, and the programme staff eventually asked me to formalise them. That was a fun thing to be asked.
+The MScAC programme has an intriguing educational model which actually works. Of course, implementation is harder. Here are three operational tools I built in my free time to help my University of Toronto MScAC cohort with information friction and peer-to-peer competition. At least they got used (people found them helpful!). It was a power trip when the programme staff eventually asked me to formalise them. 
 
 **Alumni matchmaker.** A Streamlit app over a vector store (ChromaDB + sentence-transformers) that does semantic matching against seven years of historical MScAC project descriptions and alumni profiles. I built it because keyword search was missing the obviously-relevant alumni.
 
-**Internship engagement dashboard.** A FastAPI + Streamlit dashboard on AWS EC2, internal to the cohort. Roughly **110 students** across the engagement funnel.
+**Internship engagement dashboard.** A FastAPI + Streamlit dashboard on AWS EC2, internal to the cohort. Roughly **110 students** across the engagement funnel. Web traffic analysis ended up helping to detect companies who were soliciting students. 
 
-**Anonymous applications tracker.** A React + Supabase app that let students share where they were in the application process without exposing identity — anonymous-by-construction. About **70 users** at peak. Currently offline: my Supabase project hit its free-tier limit and the database is paused. I'll bring it back when there's reason to.
+**Anonymous applications tracker.** A React + Supabase app that let students share where they were in the application process without exposing identity — anonymous-by-construction, built in response to companies issuing premature offers and wasting everyone's time. About **70 users** at peak. Currently offline: my Supabase project hit its free-tier limit and the database is paused. I'll bring it back when there's reason to.
 
 ## Dad's trading co-pilot
 
 A read-only decision-support dashboard for my father's discretionary momentum-quality equity portfolio. It screens his actual holdings against a fixed set of rules, surfaces buy and sell signals, and benchmarks the trades he actually took against the trades the system would have taken.
 
-Read-only by construction — no broker API, no execution surface. The audited window shows **+108pp of alpha vs same-wallet-same-dates SPY**. The backtester rebuilds bets FIFO and walks them forward through a regime-anchored deploy gate (GFC, COVID, rate-hike, full ride). Sell discipline is a first-class column with lateness colour-coded.
+Read-only by construction: no broker API, no execution surface. The audited window shows **+108pp of alpha vs same-wallet-same-dates SPY** — guess it's not impossible to beat the market after all! The backtester rebuilds bets FIFO and walks them forward through a regime-anchored deploy gate (GFC, COVID, rate-hike, full ride). 
 
 *Private repo, whitelist-gated frontend, not publicly linked. In daily use on the real portfolio, ten years of trade history.*
 
@@ -26,8 +26,6 @@ A map-reduce ontology extractor (parallel per-chapter Gemini 2.5 calls) builds a
 
 [Live: quizvid.vercel.app →](https://quizvid.vercel.app)
 
-[BYOK hosting: davidcagoh--byok.modal.run →](https://davidcagoh--byok.modal.run) — bring-your-own-key Modal app for the generation steps. No persistence.
+## Tl;dr
 
-## Pattern
-
-None of these started as a product. The MScAC tools were free-time help for people in my cohort. The trading co-pilot was a Sunday afternoon question for my dad. The mastery dashboards were what I wished I'd had as a student. They scaled because the original audience wasn't unique. Other people had the same problem.
+Sometimes people actually want to use your daydreams. 

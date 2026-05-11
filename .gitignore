@@ -7,6 +7,9 @@ dist/
 build/
 *.dist
 
+# Markdown preview exports (editor-generated)
+client/src/content/**/*.pdf
+
 # Environment variables
 .env
 .env.local
