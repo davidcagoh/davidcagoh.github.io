@@ -77,7 +77,7 @@ export default function Home() {
               )}
               <div className="space-y-3">
                 <p className="section-kicker">{home.nameKicker}</p>
-                <h1 className="font-display text-5xl leading-[0.95] font-semibold text-foreground sm:text-6xl lg:text-7xl">
+                <h1 className="font-display text-4xl leading-[0.95] font-semibold text-foreground sm:text-5xl lg:text-6xl">
                   {home.hero.line1}
                   <span className="mt-1 block text-accent-foreground/90">{home.hero.line2}</span>
                   {home.hero.line3}
