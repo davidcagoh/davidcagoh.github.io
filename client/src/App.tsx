@@ -5,20 +5,14 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import AgentAssistedResearch from "./pages/threads/AgentAssistedResearch";
-import BuiltForPeople from "./pages/threads/BuiltForPeople";
-import DLTheoryClass from "./pages/threads/DLTheoryClass";
-import ResurrectedFromDuke from "./pages/threads/ResurrectedFromDuke";
+import ThreadPage from "./pages/ThreadPage";
 
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/threads/agent-assisted-research"} component={AgentAssistedResearch} />
-      <Route path={"/threads/resurrected-from-duke"} component={ResurrectedFromDuke} />
-      <Route path={"/threads/dl-theory-class"} component={DLTheoryClass} />
-      <Route path={"/threads/built-for-people"} component={BuiltForPeople} />
+      <Route path={"/threads/:slug"} component={ThreadPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
