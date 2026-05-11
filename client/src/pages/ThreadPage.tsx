@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import { Link, useRoute } from "wouter";
 import { MarkdownProse } from "@/components/MarkdownProse";
-import { findThread } from "@/data/threads";
+import { findThread } from "@/content/threads";
 import NotFound from "@/pages/NotFound";
 
 import agentAssistedResearch from "@/content/threads/agent-assisted-research.md?raw";

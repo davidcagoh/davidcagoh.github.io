@@ -3,23 +3,23 @@ Design philosophy for this page: Scholarly Marginalia.
 This page should read like a compact academic calling card with editorial restraint,
 asymmetric composition, quiet authority, and text-led hierarchy. Every section must
 reinforce the user's identity as a principled mathematician and purposeful builder.
+
+To edit the text on this page, see client/src/content/home.ts.
+To edit the four thread gateway cards, see client/src/content/threads.ts.
 */
 
 import { ArrowUpRight, BookOpenText, Building2, Linkedin, NotebookPen } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 import { Link } from "wouter";
-import { threads, type Thread } from "@/data/threads";
+import { home } from "@/content/home";
+import { threads, type Thread } from "@/content/threads";
 
-const publicLinks = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/davidcagoh?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    description: "Professional profile, experience, and writing-adjacent public record.",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/davidcagoh",
-    description: "Code, notebooks, and public technical work.",
-  },
+// Icons for the three sidebar tag chips, in order. If you add or remove
+// tags in content/home.ts, mirror the change here.
+const tagIcons: ComponentType<SVGProps<SVGSVGElement>>[] = [
+  BookOpenText,
+  Building2,
+  NotebookPen,
 ];
 
 function ThreadCard({ thread }: { thread: Thread }) {
@@ -62,86 +62,91 @@ export default function Home() {
         <div className="editorial-grid min-h-[calc(100vh-4rem)] gap-10 lg:gap-14">
           <aside className="flex flex-col justify-between border-paper-edge bg-paper-panel px-6 py-8 shadow-paper sm:px-8 lg:sticky lg:top-8 lg:min-h-[calc(100vh-7rem)] lg:px-10 lg:py-10">
             <div className="space-y-8">
+              {home.photo.src && (
+                <div className="border-paper-edge shadow-paper" style={{ width: "9rem" }}>
+                  <img
+                    src={home.photo.src}
+                    alt={home.photo.alt}
+                    width={144}
+                    height={144}
+                    loading="eager"
+                    className="block h-36 w-36 object-cover"
+                    style={{ objectPosition: home.photo.objectPosition }}
+                  />
+                </div>
+              )}
               <div className="space-y-3">
-                <p className="section-kicker">David Goh</p>
+                <p className="section-kicker">{home.nameKicker}</p>
                 <h1 className="font-display text-5xl leading-[0.95] font-semibold text-foreground sm:text-6xl lg:text-7xl">
-                  Principled
-                  <span className="mt-1 block text-accent-foreground/90">mathematician,</span>
-                  purposeful builder.
+                  {home.hero.line1}
+                  <span className="mt-1 block text-accent-foreground/90">{home.hero.line2}</span>
+                  {home.hero.line3}
                 </h1>
               </div>
 
               <div className="space-y-4 text-base leading-7 text-muted-foreground sm:text-[1.05rem]">
-                <p>
-                  I want to be a force that shapes education. To that end, I will lead,
-                  build, and write.
-                </p>
-                <p>
-                  I am a Master of Science in Applied Computing (Applied Mathematics)
-                  student at the University of Toronto and a Singapore Public Service
-                  Commission (Teaching Service) Scholar on a public-sector leadership
-                  grooming path that begins after my studies.
-                </p>
-                <p>
-                  In the meantime, I am trying to become both an able and principled
-                  mathematician and an able and purposeful builder.
-                </p>
+                {home.bio.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
 
             <div className="space-y-6 border-t border-ink/10 pt-6">
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-3 py-1.5">
-                  <BookOpenText className="h-4 w-4" />
-                  Applied Mathematics
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-3 py-1.5">
-                  <Building2 className="h-4 w-4" />
-                  Education & public service
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-3 py-1.5">
-                  <NotebookPen className="h-4 w-4" />
-                  Writing in progress
-                </span>
+                {home.tags.map((tag, i) => {
+                  const Icon = tagIcons[i] ?? BookOpenText;
+                  return (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-2 rounded-full border border-ink/10 px-3 py-1.5"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {tag}
+                    </span>
+                  );
+                })}
               </div>
 
               <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                This site is a compact record of direction and work: a place to locate the
-                institutions, commitments, and projects shaping what I am trying to build.
+                {home.sidebarFooter}
               </p>
             </div>
           </aside>
 
           <section className="space-y-8 lg:space-y-10">
             <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
-              <p className="section-kicker">Orientation</p>
+              <p className="section-kicker">{home.orientation.kicker}</p>
               <div className="mt-4 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
                 <div className="space-y-4">
-                  <p className="text-lg leading-8 text-foreground/90">
-                    My long-run interest is in helping shape education through public
-                    leadership, institution-building, and careful thought. Mathematics
-                    grounds how I reason. Building lets me test ideas in practice.
-                    Writing helps me clarify what is worth doing.
-                  </p>
-                  <p className="text-base leading-7 text-foreground/80">
-                    I tend to wander sideways from whatever I'm assigned — a class topic
-                    becomes three side projects, an old undergrad result wants to be
-                    revived, a tool I built for myself becomes the paper. The work below
-                    is grouped by the thread it sits on, not by topic.
-                  </p>
+                  {home.orientation.paragraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className={
+                        i === 0
+                          ? "text-lg leading-8 text-foreground/90"
+                          : "text-base leading-7 text-foreground/80"
+                      }
+                    >
+                      {p}
+                    </p>
+                  ))}
                 </div>
                 <div className="space-y-4 border-t border-ink/10 pt-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
                   <div>
-                    <p className="metadata-label">Current study</p>
+                    <p className="metadata-label">{home.orientation.currentStudyLabel}</p>
                     <p className="mt-1 text-base leading-7 text-foreground">
-                      MScAC, Applied Mathematics<br />
-                      University of Toronto
+                      {home.orientation.currentStudyLines.map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          {i < home.orientation.currentStudyLines.length - 1 && <br />}
+                        </span>
+                      ))}
                     </p>
                   </div>
                   <div>
-                    <p className="metadata-label">Public commitment</p>
+                    <p className="metadata-label">{home.orientation.publicCommitmentLabel}</p>
                     <p className="mt-1 text-base leading-7 text-foreground">
-                      Singapore Public Service Commission (Teaching Service) Scholar
+                      {home.orientation.publicCommitmentText}
                     </p>
                   </div>
                 </div>
@@ -149,9 +154,9 @@ export default function Home() {
             </div>
 
             <div className="border-paper-edge bg-card px-6 py-7 shadow-paper sm:px-8">
-              <p className="section-kicker">Elsewhere</p>
+              <p className="section-kicker">{home.elsewhere.kicker}</p>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {publicLinks.map((link) => (
+                {home.elsewhere.links.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
@@ -178,14 +183,13 @@ export default function Home() {
             <div className="border-paper-edge bg-paper-panel px-6 py-7 shadow-paper sm:px-8">
               <div className="flex flex-col gap-3 border-b border-ink/10 pb-5 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="section-kicker">Threads</p>
+                  <p className="section-kicker">{home.threadsIntro.kicker}</p>
                   <h2 className="font-display text-3xl leading-tight text-foreground sm:text-[2.4rem]">
-                    Four lines of work
+                    {home.threadsIntro.heading}
                   </h2>
                 </div>
                 <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                  Each card opens a side page that walks through the projects on that
-                  thread, what produced them, and where they stand.
+                  {home.threadsIntro.blurb}
                 </p>
               </div>
               <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -197,16 +201,15 @@ export default function Home() {
 
             <div className="flex items-start justify-between gap-6 border-t border-ink/10 px-1 pt-4">
               <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
-                Mathematics, the institutions that decide what gets built, and the craft
-                of building things that clarify difficult questions in education.
+                {home.footer.text}
               </p>
               <a
-                href="https://www.linkedin.com/in/davidcagoh?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                href={home.footer.ctaHref}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
-                Continue on LinkedIn
+                {home.footer.ctaLabel}
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
