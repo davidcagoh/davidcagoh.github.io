@@ -15,6 +15,11 @@
 **Why:** Thread pages are continuous narrative — markdown is the natural authoring format. Home page is many small text bits in specific positions — a typed object with named fields is easier to scan than markdown with section markers.
 **Implication:** Edit thread bodies in `content/threads/*.md`. Edit home strings in `content/home.ts`. Don't conflate the two patterns.
 
+## Projects can have up to three points; link only the public ones
+**Decision date:** 2026-05-15
+**Why:** Many projects have a local checkout, a GitHub repo, and a deployed URL. Sometimes the deploy is genuinely public (quizvid). Sometimes it's gated, stale, or personal (MScAC hub, apps-tracker, dad-trading). Linking the wrong one either leaks sensitive content or sends visitors to a broken page.
+**Implication:** In `selected-work.ts`, only add a link if it's intentionally public AND currently functional. For dormant deploys, prefer a screenshot pinned in the repo over a live URL. Track all three points (local, GH, deploy) in `wiki/public-assets.md` so the publicness decision is auditable per project.
+
 ## Editorial visual design preserved; no nav bar
 **Decision date:** 2026-05-11
 **Why:** The design system (Cormorant + IBM Plex, cream/ink, sticky-sidebar asymmetric grid, sharp 0-radius edges) is distinctive. A horizontal top nav would dilute it.

@@ -31,6 +31,13 @@ Single page index + four narrative thread pages:
 | `client/src/content/threads/*.md`             | Thread page bodies (markdown, first-person) |
 | `client/public/photos/`                       | Sidebar portrait (`feature.jpg`)            |
 | `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-10.pdf`) |
+| `client/src/content/selected-work.ts`         | Bullet items + external links on Home page  |
+
+## Public-asset map
+
+See [public-assets.md](public-assets.md) for the local-path ↔ GitHub-repo table.
+Use it when editing a README or pushing fixes — work from the local path, the
+site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
