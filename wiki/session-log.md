@@ -1,5 +1,54 @@
 # Session log
 
+## 2026-05-15 (session 2) — v3 flatten: single-column home, /about for narratives, direct external links
+
+### What was done
+
+**v3 information-architecture flatten**
+- Replaced the two-panel editorial layout with a single-column Cook-style index: photo + name + role + inline contacts (Email · GitHub · LinkedIn), one short bio paragraph, **Selected work** grouped by the four threads, footer.
+- Each Selected Work bullet renders as `Title — kicker (link · link)`. Title and kicker stay plain text; only labels inside parentheses are clickable. This shape supports future arxiv/OpenReview/slides links by appending to an item's `links` array.
+- Created `/about` route that stitches all four `content/threads/*.md` files into one long scroll with "Back to index" link. Removed `/threads/:slug` routes; deleted `client/src/pages/ThreadPage.tsx`. `MarkdownProse.tsx` retained, now imported only by About.
+- Heading on `/about` is `Threads` (not "About") — frames the page as a history of daydreams rather than an about-me.
+
+**New content surface**
+- Created `client/src/content/selected-work.ts` — typed groups of work items per thread. Single source of truth for what's bulleted on the home page. Adding a project or appending a link is now a one-file edit.
+- Collapsed `content/home.ts` to the fields the new home actually uses (photo, name, role, bio, contacts, selectedWorkHeading, aboutLinkLabel, footerText). Removed orphaned `hero`, `tags`, `sidebarFooter`, `orientation`, `elsewhere`, `threadsIntro`.
+
+**Link curation across all four threads**
+- Thread 1: lean-workspace, jepa-learning-order, stochastic-search-bounds, simplicial-latent-geometry, algo-traders (writeup + feishu + backtesting sub-links).
+- Thread 2: citation-networks (umbrella), robust-literature-discovery, cross-refs to simplicial + tda-for-time-series.
+- Thread 3: information-bottleneck-nested-optimizers, tda-for-time-series, adaptive-quiz engine (Live + GitHub). Random Fourier features bullet dropped pending a real repo.
+- Thread 4: MScAC trio linking subdirs of the mscac-initiatives monorepo, dad-trading, adaptive-learner (quizvid).
+
+**Anonymous-reachability audit**
+- Checked every external link as an unauthenticated visitor. Findings: 4 GitHub URLs were private (`lean-workspace`, `backtesting`, `dad-trading`, `adaptive-learner`); `adaptive-quiz-personality` had been renamed to `mbti-quiz-adaptive-engine`.
+- Site fix: delinked the 4 private repos (bullets still render as plain text); pointed adaptive-quiz GitHub link to the canonical new URL so we don't rely on the 301 redirect.
+
+**Wiki additions**
+- New `wiki/public-assets.md` — local-path ↔ GH-repo ↔ deploy-URL table for all four threads, plus the full 2026-05-15 link audit findings (private repos, missing descriptions, rename log).
+- New decision in `wiki/decisions.md` codifying the 3-point (local / GH / deploy) pattern: track all three, link only the intentionally-public functional ones, prefer screenshot-in-repo over linking a dormant deploy.
+- `wiki/INDEX.md` updated to point at `public-assets.md` and at `selected-work.ts`.
+
+**Discussed but not built**
+- Whether to push `meta-priors/` umbrella as its own public repo (deferred — sub-repos stand on their own for now).
+- Whether to add a Live link to dad-trading's `web-zeta-six-45.vercel.app` deploy (deferred — likely not public-facing).
+- Renaming `/about` URL to `/threads` (kept `/about` as the canonical conventional path; page itself is titled "Threads").
+- A future "economics of internship matching" daydream — no repo yet, parked.
+
+### State at end of session
+
+- Working tree clean. Latest commit on `main`: `cffead5 refactor: flatten home to single column, move narratives to /about`. Pushed to remote; GitHub Actions deploy in flight.
+- Live behaviour: `/` shows the new single-column index; `/about` shows the four stitched thread narratives; `/threads/:slug` now 404s (route removed).
+
+### What to do next session
+
+1. **Verify live deploy** at https://davidcagoh.github.io/ — single column renders correctly across 320/768/1440; `/about` scrolls cleanly; no dead links in the rendered output.
+2. **Decide on the 4 private repos** (see `wiki/public-assets.md` audit section): which to make public + give a README, which to leave private forever.
+3. **Investigate `backtesting` vs `backtester`** — local algo-traders/backtesting remote points to `davidcagoh/backtesting` (private/404); a public `davidcagoh/backtester` exists. Same repo renamed? Or two different things?
+4. **Add descriptions** on `feishu`, `citation-networks`, `robust-literature-discovery` GitHub repo pages (one-line tagline each — easy win for anonymous visitors landing there).
+5. **Resize `client/public/photos/feature.jpg`** (still 1.1MB for a 112px display).
+6. **Delete unused `client/public/photos/headshot-npc.jpg`** (17MB).
+
 ## 2026-05-11 (session 1) — bootstrap one-repo deploy + portfolio v1 → v2 → v2.2
 
 ### What was done
