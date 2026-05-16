@@ -25,6 +25,14 @@ Decision: **mirror the LinkedIn discipline.** Don't open-source the repo yet —
 - **`backtesting` vs `backtester` resolved:** Two unrelated repos. `algo-traders/backtesting` (local) → private `davidcagoh/backtesting` (404 to anon). Public `davidcagoh/backtester` (created 2025-04, last push 2026-04) is HMM/Sma-slope trading research, separate effort. Not a rename. Site behavior unchanged — backtesting stays delinked.
 - **Build verified:** `pnpm check` clean; `pnpm build` succeeds (157KB gzipped JS — react-markdown still in main bundle, parked).
 
+### Add (late session 3): sg-redistricting + parking-lot updates
+
+- Surveyed `elections/` and `meta-geom-classification/` umbrella directories.
+- **Added bullet** for `sg-redistricting-2025` to thread 4 — Paper 1 already on SocArXiv (https://osf.io/preprints/socarxiv/p7q2m_v1), repo public. Links `preprint` (SocArXiv) + `GitHub`. Set GH repo description.
+- **Thread fit flagged:** sg-redistricting sits awkwardly in "Built for people around me" — works as "for the country" but is a paper, not a tool. Parking-lot note about a possible 5th civic-stakes thread if more such work lands.
+- **Parked:** `graph-curvature-classifier` (100% test accuracy, novelty confirmed but no repo yet); `social-models` reading wiki (no output yet); `detect-latent-geometry` (empty, already covered by simplicial bullet).
+- Restored paused Supabase project `adaptive-quiz` (`scrcfecvmfohrzzwkyaq`, ap-southeast-1) — the MBTI quiz backend. Three other paused projects flagged for user decision (`litreview-v2`, `Internship Deconflicter`, `Auto-Lit-Review`).
+
 ### Open after session 3
 
 Remaining private-repo decisions (`lean-workspace`, `dad-trading`, `adaptive-learner`); live `object-position` tuning; advisor name confirmations. See INDEX for the current punch list.

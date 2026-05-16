@@ -58,6 +58,9 @@ site picks up changes only via `selected-work.ts`.
 
 ## Deferred / parking lot
 
+- **Graph-curvature classifier** (`/Users/davidgoh/LocalFiles/2025-26-Ongoing/meta-geom-classification/graph-curvature-classifier`) — 100% test accuracy classifying ER/BA/RGG/SBM/WS via Forman curvature alone; novelty confirmed via systematic lit search. Empirical sibling to simplicial-latent-geometry. **Surface once:** (a) initialised as a GitHub repo, (b) short writeup or note exists. Likely fits DL-theory thread or agent-assisted-research thread.
+- **social-models reading wiki** (`/Users/davidgoh/LocalFiles/2025-26-Ongoing/elections/social-models`) — currently a literature collection + empty project stubs (`covert-sensing`, `dissonance-playbook`). Not site-ready until one of the projects produces output.
+- **Possible fifth thread** if civic / society-stakes work grows (sg-redistricting + future covert-sensing + dissonance-playbook). Currently sg-redistricting sits awkwardly in thread 4 ("Built for people around me") — works as "for the country" but is a paper not a tool. Revisit if more civic work lands.
 - `/writing` route for short essays (Algo Traders piece, future Aristotle methodology essay) — v3 scope, not committed
 - Push `meta-priors/` umbrella as its own public repo — discussed, deferred
 - Add Live link to dad-trading deploy (`web-zeta-six-45.vercel.app`) — likely never, personal tool

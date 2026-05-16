@@ -129,6 +129,14 @@ export const selectedWork: WorkGroup[] = [
         ],
       },
       {
+        title: "Singapore electoral redistricting analysis",
+        kicker: "MCMC ensemble test of 2020→2025 boundary changes (p=0.012). Paper 2 in progress.",
+        links: [
+          { label: "preprint", href: "https://osf.io/preprints/socarxiv/p7q2m_v1" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/sg-redistricting-2025" },
+        ],
+      },
+      {
         title: "Dad's trading co-pilot",
         kicker: "Daily decision support for a working trader",
         // Repo is private; deploy is not for public viewing.
