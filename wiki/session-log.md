@@ -8,17 +8,18 @@
 - **/about narrative refresh.** The Algo Traders paragraph in `agent-assisted-research.md` ended with *"Article not yet released publicly. (Not sure if I will...)"* — stale after session 5. Rewrote to surface the actual meta-finding (ranking collapsed under scrutiny → six-layer evaluation stack + portfolio-aware kill criterion as the paper's contribution; strategies as worked example). Reads as a coherent arc with the surrounding paragraphs.
 - **`dad-trading` decision resolved.** Marked resolved-as-private in `public-assets.md` row. Stays private as a personal tool with whitelist-gated deploy; /about narrative is already honest about it; no site-level change needed.
 - **`public-assets.md` private-repos table cleaned.** Three rows were stale: `lean-workspace` (resolved session 4 — public + Zenodo), `adaptive-learner` (now correctly gated on AIED notification), `dad-trading` (resolved this session). Only `backtesting` was previously up to date.
+- **Portrait squish fixed.** User reported the sidebar portrait looked squished. Root cause: session-3 optimization force-resized `feature.jpg` (4898×3265, 3:2) directly to 400×400 webp, compressing horizontally. Fix: recovered original from git history (commit `e93cdd7`), cropped 1600×1600 square centered on face via PIL, resized to 400×400, re-encoded webp at quality 85 (21KB). `objectPosition: 55% 25%` in `home.ts` is now a no-op (square→square = no `object-cover` crop) but left in place; harmless.
 
 ### Decisions made
 None this session — all were either follow-throughs on prior decisions or housekeeping.
 
 ### State at end of session
-Clean. All audit items from 2026-05-15 are now resolved. No private repos pending decision. Site CI green at `0a2a564`.
+Clean. All audit items from 2026-05-15 are now resolved. No private repos pending decision. Portrait fixed. Site CI green at `cb9ed14`.
 
 ### What to do next session
-1. **`object-position` portrait tuning** — still unverified (`55% 25%` guess from session 3). User-side judgment: load live site, decide if crop is right.
-2. **Watching (no action):** Aubry cs.LG endorsement reply, SocArXiv v2 moderation (~2026-05-21), AIED 2026 notification for adaptive-learner (~late May), Cook math.* endorsement for simplicial + SSB.
-3. **Parking lot has not moved:** graph-curvature-classifier surfacing, social-models output, possible fifth thread for civic work, `/writing` route, meta-priors umbrella repo, code-splitting react-markdown, umami analytics env vars.
+1. **Watching (no action):** Aubry cs.LG endorsement reply, SocArXiv v2 moderation (~2026-05-21), AIED 2026 notification for adaptive-learner (~late May), Cook math.* endorsement for simplicial + SSB.
+2. **Parking lot has not moved:** graph-curvature-classifier surfacing, social-models output, possible fifth thread for civic work, `/writing` route, meta-priors umbrella repo, code-splitting react-markdown, umami analytics env vars.
+3. **Optional cleanup:** `objectPosition` field in `home.ts` could be dropped now that the image is correctly square-cropped, but no functional reason to.
 
 ---
 

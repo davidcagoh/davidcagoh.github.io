@@ -43,8 +43,7 @@ site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
-1. **`object-position` portrait tuning** — `55% 25%` was a guess from session 3, still unverified on the live deploy. User-side judgment call.
-2. **Watching (no action):**
+1. **Watching (no action):**
    - Murdock Aubry cs.LG endorsement reply (sent 2026-05-16, 5–7d window). If silent, send `7U7CH9` to Anderson next.
    - SocArXiv v2 moderation for sg-redistricting paper (~2026-05-21).
    - AIED 2026 notification for adaptive-learner (~late May). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
@@ -58,6 +57,7 @@ Resolved 2026-05-16: 2026-05-15 audit fully closed — lean-workspace public (se
 - **/about narrative refresh:** Algo Traders paragraph rewritten — surfaces the six-layer evaluation stack as the actual contribution (was stale: *"Article not yet released publicly"*).
 - **dad-trading closed:** resolved-as-private in `public-assets.md`, dropped from open-items. Final entry from 2026-05-15 audit.
 - **`public-assets.md` housekeeping:** three private-repos rows updated to current state (lean-workspace + dad-trading resolved, adaptive-learner correctly gated on AIED notification).
+- **Portrait squish fixed:** session-3 had force-resized the 3:2 original (4898×3265) directly to 400×400 webp. Re-cropped a 1600×1600 square centered on the face from the original (recovered via git history), resized to 400×400. `objectPosition: 55% 25%` is now a no-op (square→square) but left in place.
 
 ### Done in session 5 (2026-05-16, earlier)
 
