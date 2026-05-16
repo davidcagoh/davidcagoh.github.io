@@ -70,17 +70,13 @@ These have local checkouts pointing at `https://github.com/davidcagoh/<name>` bu
 | Local path | Intended GH URL | Decision |
 |---|---|---|
 | `/Users/davidgoh/LocalFiles/lean-workspace` | `davidcagoh/lean-workspace` | Make public + add README, or leave private |
-| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/algo-traders/backtesting` | `davidcagoh/backtesting` | Investigate: a different `davidcagoh/backtester` exists publicly — typo or separate repo? |
+| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/algo-traders/backtesting` | `davidcagoh/backtesting` | **Resolved 2026-05-16:** genuinely private. Public `davidcagoh/backtester` is unrelated HMM trading work, not a rename. Leave delinked. |
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/dad-trading` | `davidcagoh/dad-trading` | Probably stays private (personal tool); leave delinked |
 | `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` | Make public + README, then add `GitHub` link |
 
 ### Repos missing GitHub-level description (would help anon visitors)
 
-These work but the GitHub repo page has no description. Easy win:
-
-- `davidcagoh/feishu`
-- `davidcagoh/citation-networks`
-- `davidcagoh/robust-literature-discovery`
+~~These work but the GitHub repo page has no description. Easy win:~~ **Resolved 2026-05-16:** descriptions added to `feishu`, `citation-networks`, `robust-literature-discovery`.
 
 ### Repo renamed
 

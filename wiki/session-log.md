@@ -1,5 +1,22 @@
 # Session log
 
+## 2026-05-16 (session 3) — asset cleanup + GH descriptions + backtesting/backtester investigation
+
+### What was done
+
+- **Portrait optimization:** Converted `client/public/photos/feature.jpg` (1.1MB, 4898×3265) → `feature.webp` (14KB, 400×400, quality 85) via `cwebp`. Updated `client/src/content/home.ts` `photo.src` to `/photos/feature.webp`. ~80× size reduction for a 112px display.
+- **Deleted unused asset:** Removed `client/public/photos/headshot-npc.jpg` (17MB, never referenced).
+- **GitHub repo descriptions** added for the three that were blank (one-line tagline; appears on the repo card to anon visitors):
+  - `feishu` — "Self-directed agent reading market microstructure — part of the Algo Traders autonomous research loop."
+  - `citation-networks` — "Temporal embedding and phase characterisation of citation graphs (with X. Sun, Duke)."
+  - `robust-literature-discovery` — "LLM-based literature recovery from minimal seeds (Sun lab, Duke)."
+- **`backtesting` vs `backtester` resolved:** Two unrelated repos. `algo-traders/backtesting` (local) → private `davidcagoh/backtesting` (404 to anon). Public `davidcagoh/backtester` (created 2025-04, last push 2026-04) is HMM/Sma-slope trading research, separate effort. Not a rename. Site behavior unchanged — backtesting stays delinked.
+- **Build verified:** `pnpm check` clean; `pnpm build` succeeds (157KB gzipped JS — react-markdown still in main bundle, parked).
+
+### Open after session 3
+
+Remaining private-repo decisions (`lean-workspace`, `dad-trading`, `adaptive-learner`); live `object-position` tuning; advisor name confirmations. See INDEX for the current punch list.
+
 ## 2026-05-15 (session 2) — v3 flatten: single-column home, /about for narratives, direct external links
 
 ### What was done

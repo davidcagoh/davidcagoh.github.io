@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-15 (session 2)
+**Last updated:** 2026-05-16 (session 3)
 
 ## Live state
 
@@ -32,7 +32,7 @@ Home page is grouped by four threads but every bullet links directly to a prepri
 | `client/src/content/selected-work.ts`         | Bullet items + external links on Home page, grouped by thread    |
 | `client/src/content/threads.ts`               | Thread titles/kickers/ledes (used by Home grouping and /about)   |
 | `client/src/content/threads/*.md`             | Long-form thread narratives rendered on /about (markdown)        |
-| `client/public/photos/`                       | Header portrait (`feature.jpg`)                                  |
+| `client/public/photos/`                       | Header portrait (`feature.webp`)                                 |
 | `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-10.pdf`)                      |
 
 ## Public-asset map
@@ -44,13 +44,16 @@ site picks up changes only via `selected-work.ts`.
 ## Open items / next priorities
 
 1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints; check /about scrolls cleanly; spot-check the in-paren links open the right targets.
-2. **Decide on 4 private repos** flagged in the audit (`lean-workspace`, `backtesting`, `dad-trading`, `adaptive-learner`): public + README, or leave private and accept the plain-text bullets.
-3. **Investigate `backtesting` vs `backtester`** — local algo-traders/backtesting remote points to a private/404 repo; a public `davidcagoh/backtester` exists. Same thing renamed, or unrelated?
-4. **Add GitHub-repo descriptions** for `feishu`, `citation-networks`, `robust-literature-discovery` (one-line tagline each — easy anon-visitor win).
-5. **Resize `feature.jpg`** — currently 1.1MB, used at 112px. A 400×400 webp would be ~50KB.
-6. **Delete `headshot-npc.jpg`** (17MB, unused).
-7. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
-8. **Confirm advisor names** for endorsements in `agent-assisted-research.md` (Vardan Papyan for JEPA; Nick Cook for Simplicial).
+2. **Decide on 3 remaining private repos** (`lean-workspace`, `dad-trading`, `adaptive-learner`): public + README, or leave private and accept the plain-text bullets. (`backtesting` resolved — genuinely private; `davidcagoh/backtester` is a separate HMM/trading repo, not a rename.)
+3. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
+4. **Confirm advisor names** for endorsements in `agent-assisted-research.md` (Vardan Papyan for JEPA; Nick Cook for Simplicial).
+
+### Done in session 3 (2026-05-16)
+
+- Resized `feature.jpg` → `feature.webp` (1.1MB → 14KB at 400×400, quality 85). Updated `home.ts` src reference.
+- Deleted unused `headshot-npc.jpg` (17MB).
+- Added GitHub descriptions for `feishu`, `citation-networks`, `robust-literature-discovery`.
+- Investigated `backtesting` vs `backtester`: separate repos, not a rename. `algo-traders/backtesting` points to private `davidcagoh/backtesting`; public `davidcagoh/backtester` is unrelated HMM trading work.
 
 ## Deferred / parking lot
 

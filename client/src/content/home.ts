@@ -6,7 +6,7 @@ export const home = {
   // `objectPosition` controls which part of the photo is shown inside
   // the square crop — "X% Y%" where 0% 0% is top-left, 50% 50% is center.
   photo: {
-    src: "/photos/feature.jpg",
+    src: "/photos/feature.webp",
     alt: "David Goh",
     objectPosition: "55% 25%",
   },
