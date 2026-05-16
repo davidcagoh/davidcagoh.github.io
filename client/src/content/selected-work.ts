@@ -36,7 +36,10 @@ export const selectedWork: WorkGroup[] = [
       {
         title: "JEPA training dynamics",
         kicker: "Influential features learned first",
-        links: [{ label: "GitHub", href: "https://github.com/davidcagoh/jepa-learning-order" }],
+        links: [
+          { label: "paper", href: "https://github.com/davidcagoh/jepa-learning-order/releases/download/paper-v1/jepa-rho-ordering-2026-05-16.pdf" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/jepa-learning-order" },
+        ],
       },
       {
         title: "Stochastic search bounds",
