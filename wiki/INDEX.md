@@ -33,7 +33,7 @@ Home page is grouped by four threads but every bullet links directly to a prepri
 | `client/src/content/threads.ts`               | Thread titles/kickers/ledes (used by Home grouping and /about)   |
 | `client/src/content/threads/*.md`             | Long-form thread narratives rendered on /about (markdown)        |
 | `client/public/photos/`                       | Header portrait (`feature.webp`)                                 |
-| `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-10.pdf`)                      |
+| `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-10.pdf`, `quizvid-aied-2026.pdf`) |
 
 ## Public-asset map
 
@@ -44,7 +44,8 @@ site picks up changes only via `selected-work.ts`.
 ## Open items / next priorities
 
 1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints; check /about scrolls cleanly; spot-check the in-paren links open the right targets.
-2. **Decide on 3 remaining private repos** (`lean-workspace`, `dad-trading`, `adaptive-learner`): public + README, or leave private and accept the plain-text bullets. (`backtesting` resolved — genuinely private; `davidcagoh/backtester` is a separate HMM/trading repo, not a rename.)
+2. **Decide on 2 remaining private repos** (`lean-workspace`, `dad-trading`): public + README, or leave private and accept the plain-text bullets. (`backtesting` resolved; `adaptive-learner` deliberately held until AIED 2026 notification — see session-log session 3.)
+2a. **On AIED notification (~late May 2026):** if accepted, run `opensource-pipeline` on adaptive-learner, add GitHub link to its bullet in `selected-work.ts`, publish LinkedIn Post 3. If rejected, leave as-is and pivot per the adaptive-learner wiki fallback.
 3. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
 4. **Confirm advisor names** for endorsements in `agent-assisted-research.md` (Vardan Papyan for JEPA; Nick Cook for Simplicial).
 

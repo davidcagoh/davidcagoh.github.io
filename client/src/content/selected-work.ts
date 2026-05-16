@@ -135,10 +135,13 @@ export const selectedWork: WorkGroup[] = [
       },
       {
         title: "Adaptive learner (quizvid)",
-        kicker: "Mastery dashboard for learners",
-        // GitHub repo is private; only Live link surfaces for now.
+        kicker: "Skill-tree mastery system over arbitrary course PDFs. AIED 2026 demo submission.",
+        // GitHub repo held private until AIED notification (~late May 2026).
+        // On accept: run opensource-pipeline, add GitHub link, publish LinkedIn Post 3.
         links: [
           { label: "Live", href: "https://quizvid.vercel.app" },
+          { label: "writeup", href: "/writeups/quizvid-aied-2026.pdf" },
+          { label: "demo", href: "https://youtu.be/F2JhBMiRQqU" },
         ],
       },
     ],

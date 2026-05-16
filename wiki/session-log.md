@@ -1,6 +1,18 @@
 # Session log
 
-## 2026-05-16 (session 3) — asset cleanup + GH descriptions + backtesting/backtester investigation
+## 2026-05-16 (session 3) — asset cleanup + GH descriptions + adaptive-learner surfacing for AIED 2026
+
+### Adaptive-learner surfacing (mid-session add)
+
+Discovered adaptive-learner had just been submitted to **AIED 2026 Interactive Events** (2026-05-16). Its wiki explicitly holds open-sourcing until acceptance notification (~late May) and stages a LinkedIn Post 3 announcement to the same trigger. Site previously rendered the bullet as `(Live)` only with a generic kicker.
+
+Decision: **mirror the LinkedIn discipline.** Don't open-source the repo yet — burning the announcement moment is the explicit anti-goal. But surface the already-public artifacts:
+
+- Copied `paper/main.pdf` → `client/public/writeups/quizvid-aied-2026.pdf`.
+- Updated `selected-work.ts` adaptive-learner bullet: new kicker (*"Skill-tree mastery system over arbitrary course PDFs. AIED 2026 demo submission."*), added `writeup` (PDF) + `demo` (YouTube `https://youtu.be/F2JhBMiRQqU`) links. GitHub stays delinked.
+- Inline comment in `selected-work.ts` records the unlock condition: on accept, run `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
+
+
 
 ### What was done
 
