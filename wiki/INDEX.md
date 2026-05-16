@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-16 (session 5)
+**Last updated:** 2026-05-16 (session 6)
 
 ## Live state
 
@@ -43,16 +43,23 @@ site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
-1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints. Critical now: session-5 algo-traders bullet (paper release asset, /writeups/algo-traders-2026-05-16.pdf, backtesting GitHub) + still-untested session-4 links (JEPA paper-v1, lean-workspace GitHub+DOI, sg-redistricting preprint+GitHub, adaptive-learner trio).
-2. **`dad-trading` decision** (only remaining private repo flagged in 2026-05-15 audit). Likely stays private as a personal tool; if so, mark resolved.
-3. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
-4. **Watching (no action):**
+1. **`object-position` portrait tuning** — `55% 25%` was a guess from session 3, still unverified on the live deploy. User-side judgment call.
+2. **Watching (no action):**
    - Murdock Aubry cs.LG endorsement reply (sent 2026-05-16, 5–7d window). If silent, send `7U7CH9` to Anderson next.
    - SocArXiv v2 moderation for sg-redistricting paper (~2026-05-21).
    - AIED 2026 notification for adaptive-learner (~late May). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
    - Cook math.* endorsement reply for simplicial + SSB.
 
-### Done in session 5 (2026-05-16, this session)
+Resolved 2026-05-16: 2026-05-15 audit fully closed — lean-workspace public (session 4), backtesting public + paper-v1 release (session 5), dad-trading stays private with honest /about copy (session 6). All link checks pass.
+
+### Done in session 6 (2026-05-16, this session)
+
+- **Full live-deploy link verification:** all 15 external links across sessions 4 + 5 return 200 (HEAD checks). Old `algo-traders-2026-05-10.pdf` correctly 404s.
+- **/about narrative refresh:** Algo Traders paragraph rewritten — surfaces the six-layer evaluation stack as the actual contribution (was stale: *"Article not yet released publicly"*).
+- **dad-trading closed:** resolved-as-private in `public-assets.md`, dropped from open-items. Final entry from 2026-05-15 audit.
+- **`public-assets.md` housekeeping:** three private-repos rows updated to current state (lean-workspace + dad-trading resolved, adaptive-learner correctly gated on AIED notification).
+
+### Done in session 5 (2026-05-16, earlier)
 
 - **`davidcagoh/backtesting` flipped public** with README polish (lead with paper, fix broken `../writeup-2026-05-10.md` parent link, snapshot 2026-05-10 → 2026-05-16), empty placeholder dirs removed.
 - **Tag `paper-v1` + release** on backtesting with `algo-traders-2026-05-16.pdf` (14-page single-column LaTeX, six-layer evaluation stack) as release asset.

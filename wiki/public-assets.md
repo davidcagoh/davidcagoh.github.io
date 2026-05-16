@@ -69,10 +69,10 @@ These have local checkouts pointing at `https://github.com/davidcagoh/<name>` bu
 
 | Local path | Intended GH URL | Decision |
 |---|---|---|
-| `/Users/davidgoh/LocalFiles/lean-workspace` | `davidcagoh/lean-workspace` | Make public + add README, or leave private |
+| `/Users/davidgoh/LocalFiles/lean-workspace` | `davidcagoh/lean-workspace` | **Resolved 2026-05-16 (session 4):** flipped public with MIT + README + Zenodo DOI. |
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/algo-traders/backtesting` | `davidcagoh/backtesting` | **Resolved 2026-05-16 (session 5):** flipped public; paper PDF hosted as release asset at tag `paper-v1`; site bullet now includes `paper` + `GitHub`. |
-| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/dad-trading` | `davidcagoh/dad-trading` | Probably stays private (personal tool); leave delinked |
-| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` | Make public + README, then add `GitHub` link |
+| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/dad-trading` | `davidcagoh/dad-trading` | **Resolved 2026-05-16 (session 6):** stays private as a personal tool with whitelist-gated deploy. /about narrative is already honest about this; no site-level change needed. |
+| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` | Gated on AIED 2026 notification (~late May). On accept: open-source via `opensource-pipeline`, add `GitHub` link to existing `Live · writeup · demo` bullet. |
 
 ### Repos missing GitHub-level description (would help anon visitors)
 
