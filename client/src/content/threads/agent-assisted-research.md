@@ -36,7 +36,7 @@ The second harness was an experiment. I wanted to see if I could prompt an agent
 
 The agent landed `trend_vol_v4` at score 0.40 (CAGR 11.75%, SR 1.21, MDD 7.98%). The decisive lesson was an execution-gap finding: signals reported on close-to-close returns failed catastrophically when forced to execute at the post-gap VWAP. The IC numbers were great. The PnL was −54%. Lesson learned: always check what your signal is actually being asked to do.
 
-I ported the loop to Hyperliquid crypto perpetuals which is surprisingly doing way better. Two strategies cleared the thresholds: **SmaRegime180** (BTC, +20% bull / +1.3% bear; Calmar 8.68 with realistic funding-rate costs) and **HmmSmaSlopeV2** (six-coin, +33.4% / −1.6%). Selection sits on a Pareto frontier of (Calmar, SQN, profit factor); promotion is gated by a Deflated Sharpe Ratio and a 5.5% bear-MDD kill rule. Article not yet released publicly. (Not sure if I will...)
+I ported the loop to Hyperliquid crypto perpetuals which is surprisingly doing way better. Two strategies cleared the thresholds: **SmaRegime180** (BTC, +20% bull / +1.3% bear; Calmar 8.68 with realistic funding-rate costs) and **HmmSmaSlopeV2** (six-coin, +33.4% / −1.6%). The interesting part wasn't either strategy; it was that ranking them collapsed under scrutiny. Different metrics picked different winners, the same code looked broken on one regime and great on another, and Deflated-Sharpe-deflating the whole backtest archive put every candidate inside the noise band. So the writeup turned into a methodology paper — a six-layer evaluation stack and a portfolio-aware kill criterion — with the strategies as the worked example rather than the point.
 
 ## Optimus Prime and Bumblebee
 
