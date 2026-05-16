@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-16 (session 3)
+**Last updated:** 2026-05-16 (session 4)
 
 ## Live state
 
@@ -43,13 +43,28 @@ site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
-1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints; check /about scrolls cleanly; spot-check the in-paren links open the right targets.
-2. **Decide on 2 remaining private repos** (`lean-workspace`, `dad-trading`): public + README, or leave private and accept the plain-text bullets. (`backtesting` resolved; `adaptive-learner` deliberately held until AIED 2026 notification — see session-log session 3.)
-2a. **On AIED notification (~late May 2026):** if accepted, run `opensource-pipeline` on adaptive-learner, add GitHub link to its bullet in `selected-work.ts`, publish LinkedIn Post 3. If rejected, leave as-is and pivot per the adaptive-learner wiki fallback.
+1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints. Critical now: check the *new* links from session 4 — JEPA `paper` (release asset), lean-workspace `GitHub` + `DOI`, sg-redistricting `preprint` (versionless OSF) + `GitHub`, adaptive-learner `Live · writeup · demo`.
+2. **`dad-trading` decision** (only remaining private repo flagged in 2026-05-15 audit). Likely stays private as a personal tool; if so, mark resolved.
 3. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
-4. **Confirm advisor names** for endorsements in `agent-assisted-research.md` (Vardan Papyan for JEPA; Nick Cook for Simplicial).
+4. **Watching (no action):**
+   - Murdock Aubry cs.LG endorsement reply (sent 2026-05-16, 5–7d window). If silent, send `7U7CH9` to Anderson next.
+   - SocArXiv v2 moderation for sg-redistricting paper (~2026-05-21).
+   - AIED 2026 notification for adaptive-learner (~late May). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
+   - Cook math.* endorsement reply for simplicial + SSB.
 
-### Done in session 3 (2026-05-16)
+### Done in session 4 (2026-05-16, this session)
+
+- **Adaptive-learner surfaced for AIED 2026** — added `writeup` (paper PDF) + `demo` (YouTube) to thread-4 bullet; rewrote kicker to reflect substance. GitHub link held until AIED notification per adaptive-learner wiki strategy.
+- **sg-redistricting-2025 added to thread 4** with `preprint` (SocArXiv) + `GitHub` links. Set GH repo description.
+- **sg-redistricting paper v2 submitted to SocArXiv** mid-session (after the original `p7q2m_v1` upload preceded session-17 robustness work that materially changed §3 statistics + §4/§7 disclosures). Site URL updated to versionless `p7q2m`.
+- **lean-workspace flipped to public** with MIT, README, Zenodo DOI `10.5281/zenodo.20225881`, tag `v0.1-methodology-public`. Thread-1 harness bullet now `(GitHub · DOI)`.
+- **JEPA paper hosted** as GitHub release asset on `jepa-learning-order` (tag `paper-v1`). Thread-1 JEPA bullet now `(paper · GitHub)`.
+- **Three Lean sub-repo READMEs** (jepa / ssb / simplicial) upgraded with "Result" sections.
+- **Supabase `adaptive-quiz` project restored** from INACTIVE (MBTI quiz Vercel deploy works again).
+- **JEPA cs.LG endorsement plan reset:** Papyan ghosted ~3 weeks; sent same code `7U7CH9` to Murdock Aubry (AppMath cohortmate + arXiv 2407.07810 ICLR 2025 cs.LG + Papyan co-author).
+- **Thread-1 narrative** in `agent-assisted-research.md`: removed Papyan name-drop from JEPA attribution.
+
+### Done in session 3 (2026-05-16, earlier)
 
 - Resized `feature.jpg` → `feature.webp` (1.1MB → 14KB at 400×400, quality 85). Updated `home.ts` src reference.
 - Deleted unused `headshot-npc.jpg` (17MB).

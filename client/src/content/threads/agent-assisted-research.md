@@ -12,7 +12,7 @@ The first machine-checked statement about the training dynamics of Yann LeCun's 
 
 Two intentional named sorries (Picard–Lindelöf; the Littwin et al. 2024 Laurent asymptotic). I follow the CompCert convention here: structural open hypotheses get marked explicitly rather than buried in prose. 
 
-*Preprint, arXiv pending (cs.LG endorsement from Vardan Papyan). TMLR target.*
+*Preprint, arXiv submission pending cs.LG endorsement. TMLR target.*
 
 ## Stochastic search bounds – The harness produced the paper that says the harness is tractable
 

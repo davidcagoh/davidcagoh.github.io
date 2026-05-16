@@ -1,5 +1,65 @@
 # Session log
 
+## 2026-05-16 (session 4) — sg-redistricting v2 + lean-workspace public + JEPA paper hosted + endorsement reset
+
+### What was done
+
+**Singapore redistricting paper v2 to SocArXiv.**
+- Investigated state: v1 (`p7q2m_v1`) uploaded session 16 (2026-04-24) of the sg-redistricting wiki; session 17 (2026-04-26, commit `63deb71` in that repo) discovered the original primary ensemble was stuck (`towns_split` σ=0, KS D=0.994 vs rerun), switched primary to `seed_001`, updated §3 stats, expanded §4 caveat + §7 limitations. Material methodological correction never made it onto the public preprint.
+- Submitted `writeup/paper1/paper.pdf` from commit `63deb71` as v2. SocArXiv pre-moderation queue. Canonical URL now versionless: `https://osf.io/preprints/socarxiv/p7q2m`. Site `selected-work.ts` updated to use versionless URL (commit `e085c82`).
+- Logged session 19 in the sg-redistricting wiki itself (`7c473b8` in that repo).
+- **Side decision:** declined the unsolicited *Political Science International* (OPAST, ISSN 2995-326X) journal invitation from "Walter Doris" — predatory tells (mass unsolicited mail to "Dr. Goh", 135+ journals across all fields, no peer-review framing). No reply.
+
+**lean-workspace flipped to public.**
+- Repo `davidcagoh/lean-workspace` visibility=PUBLIC. MIT LICENSE added. README written (~150 lines, workflow framing + three case studies, deliberately measured tone). Description: *"Aristotle-assisted formal verification of original mathematical research. Three Lean 4 projects (JEPA dynamics, simplicial latent geometry, stochastic search bounds) plus the workflow that built them."*
+- Pedagogical wiki files (`aristotle-strategy.md`, `lean4-reference.md`, `decisions.md`, `open-questions.md`) tracked. Running-state files (`INDEX.md`, `session-log.md`) gitignored to keep open lab notebook private.
+- `.gitignore` expanded; `.pyc` files removed from tracking; `AI Math Research SOTA Review.docx` deleted locally; `website-brief.md` gitignored.
+- Tag `v0.1-methodology-public` + GitHub release published. Zenodo wired via GitHub integration → **DOI `10.5281/zenodo.20225881`** minted. Badge added to README.
+- **Three sub-repo READMEs upgraded** with "Result" sections (commits): `jepa-learning-order` `1e35920`, `stochastic-search-bounds` `2c67e8f`, `simplicial-latent-geometry` `5b79581` (cherry-picked to master from feature branch `oq-18-cech-convention`). Now stranger landing on any of the three immediately learns what's proved.
+- **Site update**: thread-1 harness bullet promoted from plain text to `(GitHub · DOI)`. Commit `dd03c89`.
+
+**JEPA paper as a GitHub release asset.**
+- Tagged `paper-v1` on `davidcagoh/jepa-learning-order`. Uploaded `paper.pdf` (583KB, 12pp). Public URL: https://github.com/davidcagoh/jepa-learning-order/releases/download/paper-v1/jepa-rho-ordering-2026-05-16.pdf
+- Thread-1 JEPA bullet on site now `(paper · GitHub)`. Commit `00cbb18`.
+
+**Adaptive-learner surfaced for AIED 2026.**
+- Copied `paper/main.pdf` from adaptive-learner repo → `client/public/writeups/quizvid-aied-2026.pdf`.
+- Thread-4 bullet kicker rewritten: *"Skill-tree mastery system over arbitrary course PDFs. AIED 2026 demo submission."*
+- Links: `Live` (quizvid.vercel.app) + `writeup` (PDF) + `demo` (https://youtu.be/F2JhBMiRQqU). GitHub link held until AIED notification per adaptive-learner wiki's "hold for announcement" strategy.
+
+**Supabase `adaptive-quiz` restored** (was INACTIVE / about to be paused). Project ID `scrcfecvmfohrzzwkyaq`, ap-southeast-1. MBTI quiz at https://adaptive-quiz-personality.vercel.app working again. Three other paused projects flagged but not restored: `litreview-v2`, `Internship Deconflicter Project`, `Auto-Lit-Review`.
+
+**Endorsement pipeline reset.**
+- Papyan ask (cs.LG for JEPA, code `7U7CH9`) sent ~3 weeks ago has gone silent despite explicit soft-opt-out clause. Interpreted as soft no; not chasing.
+- Surveyed alternative endorsers across Vector Institute, Duke CS, and the MScAC project archive (`/Users/davidgoh/LocalFiles/2025-26-Work/MScAC-initiatives/mscac-intern-dashboard/data/projects_archive.csv` — 635 projects, 9 cohorts).
+- **Match: Murdock Aubry** — AppMath cohortmate (Boson AI), and first author of arXiv `2407.07810` *Transformer Block Coupling and its Correlation with Generalization in LLMs* (ICLR 2025, primary cs.LG) — co-authored with Papyan. Code-bearing email sent.
+- Plan B: Anderson (UToronto CS, NeurIPS/KDD-active) reusing same code. Plan C: Grosse (UToronto / Vector, deep learning theory).
+
+**Thread-1 narrative softened.**
+- Removed Papyan name-drop from JEPA attribution in `client/src/content/threads/agent-assisted-research.md` (line 15). "cs.LG endorsement from Vardan Papyan" → "cs.LG endorsement".
+
+### State at end of session
+
+- Site: 7 site commits this session (`5b1943d`, `e085c82`, `c036b37`, `dd03c89`, `00cbb18`, `059c0c3`, plus the threads.md tweak). Live in ~1–2 min of each push.
+- lean-workspace: public, MIT, DOI 10.5281/zenodo.20225881, README + LICENSE pushed.
+- Sg-redistricting: paper v2 in SocArXiv moderation. Site URL versionless.
+- All four threads on the site now have at least one bullet with real artifacts (paper / preprint / DOI / Live).
+
+### What to do next session
+
+1. **Verify live deploy** (the only thing that requires David's eyes — links are too important to assume work).
+2. **Check Murdock reply** (5–7d). If silent → email Anderson with same code.
+3. **Check SocArXiv moderation** (~2026-05-21). If approved, possibly mention on LinkedIn.
+4. **Decide on `dad-trading`** (likely stays private; mark resolved).
+5. Other deferred items in INDEX parking lot remain there.
+
+### Decisions not made this session
+
+- Did **not** push the wiki INDEX / session-log of lean-workspace to GitHub — they're gitignored. Open lab notebook stays local; only pedagogical wiki files are public. This was a deliberate session-55 decision in that repo's own wiki.
+- Did **not** auto-add the `__manus__/version.json` reference to ignore (already there).
+
+---
+
 ## 2026-05-16 (session 3) — asset cleanup + GH descriptions + adaptive-learner surfacing for AIED 2026
 
 ### Adaptive-learner surfacing (mid-session add)
