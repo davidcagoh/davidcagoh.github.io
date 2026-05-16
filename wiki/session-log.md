@@ -1,5 +1,30 @@
 # Session log
 
+## 2026-05-16 (session 5) — backtesting public + algo-traders paper surfaced
+
+### What was done
+
+- **`davidcagoh/backtesting` flipped public.** README polish first: lead with paper, fix broken `../writeup-2026-05-10.md` parent-repo cross-link, snapshot date 2026-05-10 → 2026-05-16. Deleted empty `paper/` and `essays/` placeholder dirs (actual artifacts live in the meta-repo at `2025-26-Ongoing/algo-traders/`).
+- **Tag `paper-v1` + release on `backtesting`** with `algo-traders-2026-05-16.pdf` (323KB, 14-page single-column LaTeX) as release asset. Mirrors the JEPA pattern; chose release-asset over Zenodo since paper has visible TODOs (§8 Threats, §9 Future Work) and no external submission yet.
+- **Site bullet updated** (`selected-work.ts`): kicker → *"Six-layer evaluation stack for laptop-scale quant"*. Links: `paper` (release asset) · `writeup` (2026-05-16) · `GitHub` (backtesting) · `feishu`.
+- **Writeup PDF swap:** removed stale `algo-traders-2026-05-10.pdf` from `client/public/writeups/`, added `algo-traders-2026-05-16.pdf` (principled six-layer writeup that explicitly supersedes the narrative essay).
+- **Wiki updates:** `public-assets.md` thread-1 note + private-repo table row both reflect the new public state + paper release asset.
+
+### Decisions made
+
+- **Release asset vs Zenodo for the algo-traders paper:** GitHub release asset. Same reasoning as JEPA. Zenodo trigger is external submission OR a "happy to be cited at this version forever" stable v1 — neither holds yet. Logged in `decisions.md`.
+
+### State at end of session
+Clean. Build green (`pnpm build` ✓ at commit `ed27255` on site, `17447bd` on backtesting). Site CI auto-deploys ~1–2 min after `ed27255`.
+
+### What to do next session
+1. **Verify live deploy:** new algo-traders bullet renders correctly, all four links resolve (paper release asset, /writeups/algo-traders-2026-05-16.pdf, both repos). Check the session-4 links too (still untested in browser: JEPA paper-v1, lean-workspace, sg-redistricting, adaptive-learner).
+2. **`object-position` portrait tuning** — `55% 25%` is still a guess.
+3. **`dad-trading` decision** (only remaining private repo flagged in 2026-05-15 audit). Likely stays private; mark resolved either way.
+4. **Watching (no action):** Aubry cs.LG endorsement reply, SocArXiv v2 moderation, AIED 2026 notification, Cook math.* endorsement.
+
+---
+
 ## 2026-05-16 (session 4) — sg-redistricting v2 + lean-workspace public + JEPA paper hosted + endorsement reset
 
 ### What was done

@@ -16,7 +16,7 @@ GitHub repo on the right.
 
 Notes:
 - `algo-traders` is a *local* umbrella directory containing two separate public GitHub repos. There is no single `algo-traders` repo on GitHub.
-- The Algo Traders writeup lives at `client/public/writeups/algo-traders-2026-05-10.pdf` and is served at `/writeups/algo-traders-2026-05-10.pdf` — the main bullet on the home page links there; the two repos appear as sub-links in parentheses after the kicker.
+- The Algo Traders writeup lives at `client/public/writeups/algo-traders-2026-05-16.pdf` and is served at `/writeups/algo-traders-2026-05-16.pdf`. The bullet links: `paper` (release asset on `backtesting`, tag `paper-v1`) · `writeup` · `GitHub` (backtesting) · `feishu`.
 
 ## Thread two — Resurrected from Duke
 
@@ -70,7 +70,7 @@ These have local checkouts pointing at `https://github.com/davidcagoh/<name>` bu
 | Local path | Intended GH URL | Decision |
 |---|---|---|
 | `/Users/davidgoh/LocalFiles/lean-workspace` | `davidcagoh/lean-workspace` | Make public + add README, or leave private |
-| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/algo-traders/backtesting` | `davidcagoh/backtesting` | **Resolved 2026-05-16:** genuinely private. Public `davidcagoh/backtester` is unrelated HMM trading work, not a rename. Leave delinked. |
+| `/Users/davidgoh/LocalFiles/2025-26-Ongoing/algo-traders/backtesting` | `davidcagoh/backtesting` | **Resolved 2026-05-16 (session 5):** flipped public; paper PDF hosted as release asset at tag `paper-v1`; site bullet now includes `paper` + `GitHub`. |
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/dad-trading` | `davidcagoh/dad-trading` | Probably stays private (personal tool); leave delinked |
 | `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` | Make public + README, then add `GitHub` link |
 

@@ -24,3 +24,8 @@
 **Decision date:** 2026-05-11
 **Why:** The design system (Cormorant + IBM Plex, cream/ink, sticky-sidebar asymmetric grid, sharp 0-radius edges) is distinctive. A horizontal top nav would dilute it.
 **Implication:** v3 changes (e.g. `/writing` section) should reach via in-text links or sidebar additions, not by adding a nav bar. Thread cards on the home page already do navigation work.
+
+## Release-asset hosting (not Zenodo) for in-flight papers
+**Decision date:** 2026-05-16
+**Why:** Two patterns are emerging in this repo's practice: (a) GitHub release asset when the artifact lives with code, is mid-evolution, and might be reissued (JEPA paper, algo-traders paper); (b) Zenodo DOI when the artifact is meant to be *cited from other papers* and needs to outlive the repo (lean-workspace methodology). The friction of a Zenodo DOI — committing to a frozen snapshot — is a feature, not a bug.
+**Implication:** Default to release-asset for new papers. Trigger Zenodo when (i) submitting to a venue that needs a citable URL, or (ii) the artifact reaches a stable v1 you'd be happy to be cited at forever. Algo-traders paper-v1 deliberately stays release-asset until external submission.

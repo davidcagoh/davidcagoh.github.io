@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-16 (session 4)
+**Last updated:** 2026-05-16 (session 5)
 
 ## Live state
 
@@ -33,7 +33,7 @@ Home page is grouped by four threads but every bullet links directly to a prepri
 | `client/src/content/threads.ts`               | Thread titles/kickers/ledes (used by Home grouping and /about)   |
 | `client/src/content/threads/*.md`             | Long-form thread narratives rendered on /about (markdown)        |
 | `client/public/photos/`                       | Header portrait (`feature.webp`)                                 |
-| `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-10.pdf`, `quizvid-aied-2026.pdf`) |
+| `client/public/writeups/`                     | Hosted PDFs (`algo-traders-2026-05-16.pdf`, `quizvid-aied-2026.pdf`) |
 
 ## Public-asset map
 
@@ -43,7 +43,7 @@ site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
-1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints. Critical now: check the *new* links from session 4 — JEPA `paper` (release asset), lean-workspace `GitHub` + `DOI`, sg-redistricting `preprint` (versionless OSF) + `GitHub`, adaptive-learner `Live · writeup · demo`.
+1. **Verify live deploy** at https://davidcagoh.github.io/ across breakpoints. Critical now: session-5 algo-traders bullet (paper release asset, /writeups/algo-traders-2026-05-16.pdf, backtesting GitHub) + still-untested session-4 links (JEPA paper-v1, lean-workspace GitHub+DOI, sg-redistricting preprint+GitHub, adaptive-learner trio).
 2. **`dad-trading` decision** (only remaining private repo flagged in 2026-05-15 audit). Likely stays private as a personal tool; if so, mark resolved.
 3. **`object-position` tuning** for the portrait — current `55% 25%` was a guess; check live.
 4. **Watching (no action):**
@@ -52,7 +52,14 @@ site picks up changes only via `selected-work.ts`.
    - AIED 2026 notification for adaptive-learner (~late May). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
    - Cook math.* endorsement reply for simplicial + SSB.
 
-### Done in session 4 (2026-05-16, this session)
+### Done in session 5 (2026-05-16, this session)
+
+- **`davidcagoh/backtesting` flipped public** with README polish (lead with paper, fix broken `../writeup-2026-05-10.md` parent link, snapshot 2026-05-10 → 2026-05-16), empty placeholder dirs removed.
+- **Tag `paper-v1` + release** on backtesting with `algo-traders-2026-05-16.pdf` (14-page single-column LaTeX, six-layer evaluation stack) as release asset.
+- **Site bullet rewritten:** kicker → *"Six-layer evaluation stack for laptop-scale quant"*; links now `paper · writeup · GitHub · feishu`. Stale 2026-05-10 PDF replaced by 2026-05-16 principled writeup.
+- **Decision logged:** release-asset hosting (not Zenodo) for the algo-traders paper, matching JEPA pattern. Zenodo trigger remains external submission or stable v1.
+
+### Done in session 4 (2026-05-16, earlier)
 
 - **Adaptive-learner surfaced for AIED 2026** — added `writeup` (paper PDF) + `demo` (YouTube) to thread-4 bullet; rewrote kicker to reflect substance. GitHub link held until AIED notification per adaptive-learner wiki strategy.
 - **sg-redistricting-2025 added to thread 4** with `preprint` (SocArXiv) + `GitHub` links. Set GH repo description.
