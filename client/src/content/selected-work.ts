@@ -28,10 +28,9 @@ export const selectedWork: WorkGroup[] = [
       {
         title: "Lean 4 + Aristotle proof harness",
         kicker: "Two-agent loop writing Lean proofs. Workflow + wiki for three formal-verification projects (below).",
-        // TODO: append { label: "DOI", href: "https://doi.org/10.5281/zenodo.XXXXXXX" }
-        // once Zenodo finishes minting the DOI for v0.1-methodology-public.
         links: [
           { label: "GitHub", href: "https://github.com/davidcagoh/lean-workspace" },
+          { label: "DOI", href: "https://doi.org/10.5281/zenodo.20225881" },
         ],
       },
       {
