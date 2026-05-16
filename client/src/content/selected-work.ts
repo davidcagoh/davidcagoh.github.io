@@ -53,10 +53,11 @@ export const selectedWork: WorkGroup[] = [
       },
       {
         title: "Algo Traders — autonomous research loop",
-        kicker: "Self-directed agent reading market microstructure",
-        // backtesting repo is private; only writeup + feishu link out for now.
+        kicker: "Six-layer evaluation stack for laptop-scale quant",
         links: [
-          { label: "writeup", href: "/writeups/algo-traders-2026-05-10.pdf" },
+          { label: "paper", href: "https://github.com/davidcagoh/backtesting/releases/download/paper-v1/algo-traders-2026-05-16.pdf" },
+          { label: "writeup", href: "/writeups/algo-traders-2026-05-16.pdf" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/backtesting" },
           { label: "feishu", href: "https://github.com/davidcagoh/feishu" },
         ],
       },
