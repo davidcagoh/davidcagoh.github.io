@@ -14,7 +14,7 @@ export const threads: Thread[] = [
     kicker: "Thread one",
     title: "Agent-assisted research",
     lede: "Two robots iterating on Math proofs, five feet apart because they're not-",
-    chips: ["Lean + Aristotle", "JEPA", "Stochastic Search Bounds", "Simplicial geometry", "Algo Traders"],
+    chips: ["Lean + Aristotle harness", "JEPA", "Stochastic Search Bounds", "Simplicial geometry", "Algo Traders"],
   },
   {
     slug: "resurrected-from-duke",
@@ -29,8 +29,8 @@ export const threads: Thread[] = [
     path: "/threads/dl-theory-class",
     kicker: "Thread three",
     title: "Deep Learning Theory",
-    lede: "Probably my favourite class in U of T. Lots of daydreams spun off into sidequests, including an MBTI test powered by the same optimizer that trained ChatGPT.",
-    chips: ["Meta-priors umbrella", "IB + nested optimisers", "Random Fourier features", "TDA", "Adaptive engine"],
+    lede: "Probably my favourite class in U of T. Lots of daydreams spun off into sidequests — a research-grade taxonomy of inductive bottlenecks on one branch, an adaptive Bayesian quiz engine (later powering an MBTI test and an AIED-2026 mastery-tree demo) on the other.",
+    chips: ["Meta-priors umbrella", "Adaptive engine", "MBTI quiz", "quizvid"],
   },
   {
     slug: "built-for-people",

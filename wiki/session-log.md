@@ -1,5 +1,46 @@
 # Session log
 
+## 2026-05-17 (session 7 — extension) — DLT main-page restructure + branch schema + full home-page audit
+
+### What was done
+
+Same-day continuation. The next-session items from session 7 above all landed in this extension:
+
+- **Schema change in `selected-work.ts`**: added two optional fields to `WorkItem`. `branch?: string` lets items within a thread render under a sub-heading when the value changes between consecutive items. `branchLinks?: { label, href }[]` is honoured only on the *first* item of a branch and renders links next to the heading — used when a branch corresponds to an umbrella artifact (meta-priors, Lean+Aristotle harness) and the items below are sub-projects of it. Threads that don't bifurcate ignore both fields. `Home.tsx` rendering updated with a `flatMap` so a branch heading `<li>` is emitted on first appearance.
+
+- **DL theory class restructured into two branches.** *Bottlenecks & regularization* (meta-priors umbrella → 8 sub-experiments listed individually) and *Optimizers & optimization — the adaptive engine, two instances* (MBTI quiz + Adaptive Khan-style mastery). Reflects the actual mental model — the DLT class spawned two distinct research lineages, not five unrelated sidequests.
+
+- **MBTI `REPORT.md` rendered to PDF** via pandoc + xelatex (DejaVu Serif + DejaVu Sans Mono for Unicode math coverage). Output at `client/public/writeups/mbti-adaptive-engine.pdf` (219 KB). Attached to the MBTI quiz bullet directly — corrected initial placement that put it on the branch heading (the writeup is literally titled "Adaptive Bayesian MBTI Quiz — Technical Report" and uses MBTI as the experimental venue; it's the engine math *via* MBTI, not a separate engine paper). User caught this — good audit catch.
+
+- **Agent-assisted research restructured into two branches.** *Formal verification under Lean + Aristotle* (harness GitHub + DOI on the branch heading; JEPA / Stochastic search bounds / Simplicial geometry as sub-items) and *Autonomous quant research* (Algo Traders as the sole item). Now visually expresses the umbrella-plus-sub-items shape that was previously only signalled through the Lean kicker.
+
+- **Full home-page audit fixes:**
+  - **Quizvid duplication resolved.** `Adaptive learner (quizvid)` on the built-for-people thread converted to a one-link cross-reference (`Live` only). Primary entry on the DLT optimizer branch carries the full link set (`writeup · Live · demo`). Matches the existing convention used by Simplicial geometry / TDA cross-references on the resurrected-from-duke thread.
+  - **Algo Traders link de-duplication.** Dropped the `paper` release-asset link; kept `writeup` (site-hosted) + `GitHub` + `Lark client`. The release-tagged citable version (`paper-v1`) is still reachable via GitHub → Releases. Removes two clicks landing on the same PDF.
+  - **Robust literature discovery kicker corrected.** Was attributed to the Sun lab; it's actually David's solo project that builds on and cites Sun lab work. Kicker rewritten.
+  - **Bottlenecks branchLink label** simplified from `"meta-priors umbrella"` to `"GitHub"` to match every other GitHub link on the page.
+  - **`feishu` label** renamed to `"Lark client"` — opaque label rendered without context for non-Chinese-speaking visitors.
+
+- **`threads.ts` updates.** DLT lede rewritten to mention both branches explicitly (was MBTI-centric). DLT chips refreshed to `["Meta-priors umbrella", "Adaptive engine", "MBTI quiz", "quizvid"]`. Agent-assisted chip "Lean + Aristotle" → "Lean + Aristotle harness" for clarity.
+
+### Decisions made
+
+- **Branch-pattern IA over a nav-bar dropdown.** User raised the threads-dropdown idea this session. Pushed back on the basis of the 2026-05-11 decision (no nav bar — would dilute the editorial design). Branch sub-headings inside each thread on the home page address the same IA need (visible sub-structure) without contradicting the no-nav decision. If a future need still calls for cross-thread navigation, the leading candidate is a `/threads` index page reachable via in-text link, not a top nav.
+
+- **Cross-reference convention codified.** Cross-references (same project appearing on a second thread) get a one-line "See above/below" kicker and a single link (the consumer-facing one — Live for quizvid, GitHub for repos). Primary entry carries the full link set. Avoids two equally-weighted entries that hide which thread the project actually lives on.
+
+### State at end of session
+
+DL theory and Agent-assisted research now use the branch-pattern IA. Built-for-people and Resurrected-from-Duke unchanged (no umbrella structure to express). MBTI engine writeup added to `/writeups/`. All four audit items resolved.
+
+### What to do next session
+
+1. **Threads-dropdown decision still parked.** If after living with the branch-pattern IA for a few days the cross-thread navigation gap still bites, evaluate `/threads` index page (not a nav bar) as the next move.
+2. **JEPA kicker** *"Influential features learned first"* flagged in the audit as terse-to-the-point-of-unclear. Worth a one-line expansion when next touching that thread. Not done this session because the audit focus was DLT.
+3. **DLT thread density.** Now has 10 items. Eyeball whether the bottleneck branch (8 items) feels too dense in production; revisit cutting to the strongest 5–6 if so.
+
+---
+
 ## 2026-05-17 (session 7) — meta-priors public + DLT thread rewritten around it + website-brief pattern retired
 
 ### What was done

@@ -73,38 +73,73 @@ export default function Home() {
                       {thread.lede}
                     </p>
                     <ul className="mt-3 space-y-1.5 text-base leading-7">
-                      {group.items.map((item) => (
-                        <li key={item.title} className="flex items-baseline gap-2">
-                          <span className="text-muted-foreground/60" aria-hidden="true">
-                            ·
-                          </span>
-                          <span>
-                            <span className="text-foreground">{item.title}</span>
-                            {item.kicker && (
-                              <span className="text-muted-foreground"> — {item.kicker}</span>
-                            )}
-                            {item.links && item.links.length > 0 && (
-                              <span className="text-muted-foreground">
-                                {" ("}
-                                {item.links.map((l, i) => (
-                                  <span key={l.href}>
-                                    {i > 0 && " · "}
-                                    <a
-                                      href={l.href}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                      className="underline decoration-ink/30 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-                                    >
-                                      {l.label}
-                                    </a>
-                                  </span>
-                                ))}
-                                {")"}
-                              </span>
-                            )}
-                          </span>
-                        </li>
-                      ))}
+                      {group.items.flatMap((item, idx) => {
+                        const prevBranch = idx > 0 ? group.items[idx - 1].branch : undefined;
+                        const showBranchHeading = item.branch && item.branch !== prevBranch;
+                        const nodes = [];
+                        if (showBranchHeading) {
+                          nodes.push(
+                            <li
+                              key={`branch-${item.branch}`}
+                              className="mt-3 list-none pt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground/80"
+                            >
+                              {item.branch}
+                              {item.branchLinks && item.branchLinks.length > 0 && (
+                                <span className="ml-2 normal-case tracking-normal">
+                                  {"("}
+                                  {item.branchLinks.map((l, i) => (
+                                    <span key={l.href}>
+                                      {i > 0 && " · "}
+                                      <a
+                                        href={l.href}
+                                        target={l.href.startsWith("/") ? undefined : "_blank"}
+                                        rel={l.href.startsWith("/") ? undefined : "noreferrer"}
+                                        className="underline decoration-ink/30 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+                                      >
+                                        {l.label}
+                                      </a>
+                                    </span>
+                                  ))}
+                                  {")"}
+                                </span>
+                              )}
+                            </li>
+                          );
+                        }
+                        nodes.push(
+                          <li key={item.title} className="flex items-baseline gap-2">
+                            <span className="text-muted-foreground/60" aria-hidden="true">
+                              ·
+                            </span>
+                            <span>
+                              <span className="text-foreground">{item.title}</span>
+                              {item.kicker && (
+                                <span className="text-muted-foreground"> — {item.kicker}</span>
+                              )}
+                              {item.links && item.links.length > 0 && (
+                                <span className="text-muted-foreground">
+                                  {" ("}
+                                  {item.links.map((l, i) => (
+                                    <span key={l.href}>
+                                      {i > 0 && " · "}
+                                      <a
+                                        href={l.href}
+                                        target={l.href.startsWith("/") ? undefined : "_blank"}
+                                        rel={l.href.startsWith("/") ? undefined : "noreferrer"}
+                                        className="underline decoration-ink/30 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
+                                      >
+                                        {l.label}
+                                      </a>
+                                    </span>
+                                  ))}
+                                  {")"}
+                                </span>
+                              )}
+                            </span>
+                          </li>
+                        );
+                        return nodes;
+                      })}
                     </ul>
                   </div>
                 );
