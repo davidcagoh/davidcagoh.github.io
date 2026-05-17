@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-16 (session 6)
+**Last updated:** 2026-05-17 (session 7)
 
 ## Live state
 

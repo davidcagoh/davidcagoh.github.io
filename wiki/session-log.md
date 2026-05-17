@@ -1,5 +1,34 @@
 # Session log
 
+## 2026-05-17 (session 7) — meta-priors public + DLT thread rewritten around it + website-brief pattern retired
+
+### What was done
+
+- **Meta-priors umbrella flipped public.** Reviewed the stale `website-brief.md` in `2025-26-Ongoing/meta-priors/` against current state — the brief described 3 sub-projects and an outline stage; reality (per `meta-priors/wiki/session-log.md` through session 7) was 8 sub-projects, study-complete, paper scaffolded. Decision: don't refresh the brief, retire the pattern. Flipped `davidcagoh/meta-priors` private → public after curation: `git rm --cached` on `wiki/`, `paper/`, `refs/`, `embedding_regularization_factfile.md`; added them to `.gitignore` so they remain local-only; edited `README.md` and `OUTLINE.md` to drop now-broken path references and replace ref-PDFs with citations. History kept (the two reference PDFs in old commits are an accepted trade-off — user: "obviously I put papers in there while I was reading"). Repo live at https://github.com/davidcagoh/meta-priors.
+
+- **DLT thread rewritten around the umbrella.** `content/threads/dl-theory-class.md` previously gave the meta-priors umbrella one short paragraph among several seeds. Rewrote with the umbrella as the spine: origin story (sidequest from Papyan's class) → three headline contributions in plain language (*tightness = fragility*, *IB is one column not the table*, *coverage as third axis*) → eight sub-experiments each with one-line headline + GitHub link. Adaptive-engine sidebranch preserved at the bottom (different lineage from the same class).
+
+- **All ten `website-brief.md` files deleted.** Eight untracked local files in `lean-workspace`, `jepa-learning-order`, `simplicial-latent-geometry`, `stochastic-search-bounds`, `MScAC-initiatives`, `citation-networks`, `algo-traders`, `dad-trading` — simple `rm`. One tracked file in `adaptive-learner` (still private) — `git rm` + commit `507cda6` + push. Plus the meta-priors brief, deleted as the first step of the public-release work above.
+
+- **Wiki updates inside `2025-26-Ongoing/meta-priors/wiki/`** (now gitignored, local-only): added session-8 entry to `session-log.md` documenting the public-release curation; updated `INDEX.md` status line to reflect public/private split; left explicit guidance in the session-8 entry for future agents working in that repo ("the wiki is the brief; do not recreate website-brief.md").
+
+### Decisions made
+
+- **`website-brief.md` pattern retired** (added to `wiki/decisions.md`). No more parallel briefs; site agent reads each repo's own README / OUTLINE / report files directly.
+
+### State at end of session
+
+`davidcagoh/meta-priors` public. DLT thread rewritten. Brief pattern retired across all ten repos. CI green on local dev (`pnpm dev` verified the rewritten thread renders correctly). Site change committed and pushed at end of session.
+
+### What to do next session
+
+1. **Strategize DLT main-page restructure.** The DLT thread now has two structural sub-threads (bottlenecks/regularization = meta-priors umbrella; optimizers/optimization = adaptive engine → MBTI + Khan-style mastery). `selected-work.ts` currently lists 3 items flatly with no expression of the bifurcation. Options to evaluate: minimal title/kicker rewording (no schema change), or small schema change to support `groups` per thread. Cross-cut with the threads-dropdown nav idea floated this session — both touch IA.
+2. **Surface the existing AIED 2026 PDF more deliberately.** `client/public/writeups/quizvid-aied-2026.pdf` is already on the site but the DLT thread doesn't currently link to it explicitly. The Khan-style paper is the strongest single artifact in the optimizer-branch.
+3. **MBTI `REPORT.md` as a publishable artifact?** The repo has a full technical report in markdown that reads like a paper (Bayesian latent-trait model + active question selection, 50% fewer questions vs 80-item battery at 89.7% accuracy). Decide whether to render as a PDF for the writeups folder or just link the GitHub README from the thread.
+4. **Threads-dropdown nav idea (parking lot).** User raised this session — would invert the current flat-list IA into a menu-bar with subsections. Conflicts with the "no nav bar" decision (2026-05-11). Worth thinking through before touching.
+
+---
+
 ## 2026-05-16 (session 6) — live-deploy verification + /about narrative refresh + dad-trading closed
 
 ### What was done

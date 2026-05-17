@@ -40,8 +40,8 @@ Notes:
 | _pending_  | `davidcagoh/adaptive-quiz-personality`                          | Adaptive quiz engine (+ live deploy)            |
 
 Notes:
-- The `meta-priors/` umbrella is local-only — **not on GitHub**. Sub-repos stand on their own.
-- `engineered-features-mlp/` (Random Fourier features bullet) lives only inside the local umbrella; no public repo yet. Bullet renders without links until one exists.
+- The `meta-priors/` umbrella is **public as of session 7 (2026-05-17)** at `davidcagoh/meta-priors`. Tracked tree: `README.md`, `OUTLINE.md`, six in-repo sub-experiment folders, two submodules. Wiki, paper drafts, refs, and the embedding-reg factfile are gitignored (local-only).
+- `engineered-features-mlp/`, `weight-decay-bayes/`, `pinn-demo/`, `low-rank-implicit-reg/`, `rff-vs-tda-benchmark/`, `embedding-reg-ladder/` are now publicly visible *inside* the meta-priors repo (no standalone GitHub repo each). For the DLT thread bullets, link `davidcagoh/meta-priors` (or a deep-link to the sub-folder) rather than expecting each to have its own repo.
 
 ## Thread four — Built for people around me
 

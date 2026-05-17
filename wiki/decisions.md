@@ -29,3 +29,8 @@
 **Decision date:** 2026-05-16
 **Why:** Two patterns are emerging in this repo's practice: (a) GitHub release asset when the artifact lives with code, is mid-evolution, and might be reissued (JEPA paper, algo-traders paper); (b) Zenodo DOI when the artifact is meant to be *cited from other papers* and needs to outlive the repo (lean-workspace methodology). The friction of a Zenodo DOI — committing to a frozen snapshot — is a feature, not a bug.
 **Implication:** Default to release-asset for new papers. Trigger Zenodo when (i) submitting to a venue that needs a citable URL, or (ii) the artifact reaches a stable v1 you'd be happy to be cited at forever. Algo-traders paper-v1 deliberately stays release-asset until external submission.
+
+## `website-brief.md` pattern retired
+**Decision date:** 2026-05-17
+**Why:** Earlier we shipped one-shot `website-brief.md` files inside each linked project repo so the site agent had a prefab summary to pull from. After a few months the briefs drifted — the meta-priors brief (sessions 4–7) ended up describing 3 sub-projects when reality was 8. They were one-way: written, used once, never refreshed.
+**Implication:** No more `website-brief.md`. The site agent should read the linked repo's own README / OUTLINE / report files directly — those are the artifacts the project owner actually maintains. If a per-repo synopsis is needed for the site, generate it on demand from current state, do not persist it. All ten existing briefs (lean-workspace, jepa-learning-order, simplicial-latent-geometry, stochastic-search-bounds, MScAC-initiatives, citation-networks, algo-traders, dad-trading, adaptive-learner, meta-priors) were deleted on 2026-05-17.
