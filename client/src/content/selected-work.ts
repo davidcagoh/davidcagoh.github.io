@@ -111,42 +111,42 @@ export const selectedWork: WorkGroup[] = [
         branch: "Bottlenecks & regularization",
         branchLinks: [{ label: "GitHub", href: "https://github.com/davidcagoh/meta-priors" }],
         title: "Weight decay as a Bayesian prior",
-        kicker: "Ridge ≡ MAP under a Gaussian weights-prior, to machine precision",
-      },
-      {
-        branch: "Bottlenecks & regularization",
-        title: "Physics-informed priors",
-        kicker: "1000× sparse-data win with the right physics; 57× misspecification loss with the wrong one",
-      },
-      {
-        branch: "Bottlenecks & regularization",
-        title: "Embedding-space regularisers",
-        kicker: "Distribution-shaping and anti-rank-collapse are separable; LeJEPA T3 invisible at small encoder scale",
-      },
-      {
-        branch: "Bottlenecks & regularization",
-        title: "Random Fourier features",
-        kicker: "21-param RFF + linear head beats a 301-param MLP by 4.7× when the basis matches the target",
-      },
-      {
-        branch: "Bottlenecks & regularization",
-        title: "TDA for time series",
-        kicker: "95% leave-one-out classification across four dynamical regimes; topological features actively hurt next-step prediction",
-      },
-      {
-        branch: "Bottlenecks & regularization",
-        title: "Low-rank implicit regularisation",
-        kicker: "Depth-3 GD on a factored parameterisation recovers true rank-3; beats the convex relaxation by 10⁴×",
+        kicker: "Anchor for the Bayesian thread: ridge regression ≡ MAP under a Gaussian weights-prior to machine precision. Makes \"regularisers are bets on data shape\" concrete.",
       },
       {
         branch: "Bottlenecks & regularization",
         title: "Information bottleneck + nested optimisers",
-        kicker: "DMGD induces a compression phase that AdamW and GDM don't",
+        kicker: "Anchor for the IB thread: DMGD induces a compression phase that AdamW and GDM don't.",
+      },
+      {
+        branch: "Bottlenecks & regularization",
+        title: "Physics-informed priors",
+        kicker: "First evidence that the harder a prior bets, the more it costs when wrong: 1000× sparse-data win with the right physics, 57× loss when the assumed damping coefficient is off.",
+      },
+      {
+        branch: "Bottlenecks & regularization",
+        title: "Random Fourier features",
+        kicker: "Same pattern, applied to which frequencies your model can represent: 21-param RFF + linear head beats a 301-param MLP by 4.7× on band-limited targets; 150× collapse if the kernel bandwidth is off by 3×.",
+      },
+      {
+        branch: "Bottlenecks & regularization",
+        title: "Low-rank implicit regularisation",
+        kicker: "Bigger gap still: depth-3 GD on a factored parameterisation beats the convex relaxation it approximates by 10⁴× when the rank assumption holds.",
+      },
+      {
+        branch: "Bottlenecks & regularization",
+        title: "TDA for time series",
+        kicker: "Works in one direction, hurts in the other: persistence features classify dynamical regimes at 95% but actively harm next-step prediction. The prior is acting in the wrong place.",
+      },
+      {
+        branch: "Bottlenecks & regularization",
+        title: "Embedding-space regularisers",
+        kicker: "Where the IB frame stops fitting: distribution-shaping and anti-rank-collapse are separable mechanisms; the predicted differences are invisible until the encoder + data are big enough. Scale is a hidden third axis.",
       },
       {
         branch: "Bottlenecks & regularization",
         title: "RFF vs TDA, head-to-head",
-        kicker: "All three priors near-perfect on clean data; the comparative axis is failure-curve shape, not coverage",
+        kicker: "Synthesis test: under a noise sweep, priors with near-perfect clean accuracy fail with distinct shapes — smooth, cliff, catastrophic. The comparative axis isn't who wins, it's how each fails.",
       },
       {
         branch: "Optimizers & optimization — the adaptive engine, two instances",
