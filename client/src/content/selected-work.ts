@@ -175,23 +175,31 @@ export const selectedWork: WorkGroup[] = [
     items: [
       {
         title: "MScAC alumni matchmaker",
-        kicker: "~110 students, ~70 users. Streamlit (MScAC never deployed it).",
+        kicker: "Semantic search over 7 years of alumni project history. Built because keyword search kept missing the obviously-relevant people.",
         links: [
-          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-initiatives/tree/main/projects/alumni-matchmaker" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-alumni-matchmaker" },
         ],
       },
       {
-        title: "MScAC internship board",
-        kicker: "Cohort placement tracker",
+        title: "MScAC internship listings",
+        kicker: "Replaced an unscrollable HTML wall with a searchable, filterable interface for the cohort. The analytics that fell out flagged companies soliciting students outside the official cycle.",
         links: [
-          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-initiatives/tree/main/projects/internship-board" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-intern-dashboard" },
         ],
       },
       {
         title: "MScAC anonymous applications tracker",
-        kicker: "Peer-shared outcomes board, when2meet-style. Dormant — backend paused.",
+        kicker: "when2meet-style coordination against exploding offers. Students could see anonymously who'd already been offered, without anyone outing themselves. ~70 users; Supabase paused.",
         links: [
-          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-initiatives/tree/main/projects/apps-tracker" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-applications-tracker" },
+        ],
+      },
+      {
+        title: "MScAC matching analysis",
+        kicker: "What the three tools above couldn't fix. Clearing time + stability under correlated preferences; memo proposes a Batched Multi-Offer DA pilot for the internship cycle.",
+        links: [
+          { label: "one-pager", href: "/writeups/mscac-matching-onepager.pdf" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/mscac-matching-analysis" },
         ],
       },
       {

@@ -2,13 +2,15 @@ Tools made for specific people who needed them — cohort-mates in the MScAC pro
 
 ## MScAC initiatives
 
-The MScAC programme has an intriguing educational model which actually works. Of course, implementation is harder. Here are three operational tools I built in my free time to help my University of Toronto MScAC cohort with information friction and peer-to-peer competition. At least they got used (people found them helpful!). It was a power trip when the programme staff eventually asked me to formalise them. 
+The MScAC programme has an intriguing educational model which actually works. Of course, implementation is harder. Here are three operational tools I built in my free time to help my University of Toronto MScAC cohort with information friction, and a paper that came out of noticing the friction the tools couldn't fix. The tools got used (people found them helpful!) and it was a power trip when programme staff eventually asked me to formalise them.
 
 **Alumni matchmaker.** A Streamlit app over a vector store (ChromaDB + sentence-transformers) that does semantic matching against seven years of historical MScAC project descriptions and alumni profiles. I built it because keyword search was missing the obviously-relevant alumni.
 
-**Internship engagement dashboard.** A FastAPI + Streamlit dashboard on AWS EC2, internal to the cohort. Roughly **110 students** across the engagement funnel. Web traffic analysis ended up helping to detect companies who were soliciting students. 
+**Internship listings.** A FastAPI + Streamlit replacement for the cohort's previous wall-of-HTML internship listings — searchable and filterable, hosted on AWS EC2 and internal to the cohort. Roughly **110 students** ran through it. The analytics that fell out as a byproduct turned out to be useful too: web traffic patterns flagged companies soliciting students outside the official cycle.
 
-**Anonymous applications tracker.** A React + Supabase app that let students share where they were in the application process without exposing identity — anonymous-by-construction, built in response to companies issuing premature offers and wasting everyone's time. About **70 users** at peak. Currently offline: my Supabase project hit its free-tier limit and the database is paused. I'll bring it back when there's reason to.
+**Anonymous applications tracker.** A React + Supabase app, when2meet-style — students could see anonymously who had already been offered without anyone outing themselves, leveling the information asymmetry that companies were exploiting by quietly issuing exploding offers. About **70 users** at peak. Currently offline: my Supabase project hit its free-tier limit and the database is paused. I'll bring it back when there's reason to.
+
+**Matching analysis.** What the three tools above couldn't fix. After a year of running the operational stack I noticed the residual friction wasn't a tooling problem — it was a market-design problem. The resulting paper studies clearing time and stability in correlated matching markets, and the accompanying memo proposes a Batched Multi-Offer DA pilot for the MScAC internship cycle.
 
 ## Dad's trading co-pilot
 
