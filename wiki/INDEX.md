@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-17 (session 7)
+**Last updated:** 2026-05-25 (session 8)
 
 ## Live state
 
@@ -43,11 +43,16 @@ site picks up changes only via `selected-work.ts`.
 
 ## Open items / next priorities
 
-1. **Watching (no action):**
-   - Murdock Aubry cs.LG endorsement reply (sent 2026-05-16, 5–7d window). If silent, send `7U7CH9` to Anderson next.
-   - SocArXiv v2 moderation for sg-redistricting paper (~2026-05-21).
-   - AIED 2026 notification for adaptive-learner (~late May). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3.
+1. **Action needed:**
+   - **Email Ashton Anderson with `7U7CH9`** — Murdock Aubry cs.LG window (5–7d from 2026-05-16) expired ~2026-05-23. Anderson is Plan B; Roger Grosse is Plan C.
+
+2. **Watching (no action):**
+   - AIED 2026 notification for adaptive-learner (overdue from "late May"). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3. On reject: pivot to LBR / UMAP / ITS / L@S.
+   - SocArXiv v2 moderation for sg-redistricting paper (expected ~2026-05-21, may be approved — check OSF).
    - Cook math.* endorsement reply for simplicial + SSB.
+   - **CICM 2026 presentation-only deadline June 15 (Ljubljana, Sept 21–25):** SSB or JEPA-LO viable once arXiv ID exists. Submit after endorsement lands.
+   - **jepa-rho-recovery (paper-2):** ready to feature on site once paper-v1 GitHub release is tagged (same trigger as JEPA-LO).
+   - **UTGSU Summer Cycle bursary:** bookmark once a summer conference (AIED or CICM) is confirmed.
 
 Resolved 2026-05-16: 2026-05-15 audit fully closed — lean-workspace public (session 4), backtesting public + paper-v1 release (session 5), dad-trading stays private with honest /about copy (session 6). All link checks pass.
 
