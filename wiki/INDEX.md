@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-05-25 (session 8)
+**Last updated:** 2026-06-01 (session 9)
 
 ## Live state
 
@@ -55,6 +55,12 @@ site picks up changes only via `selected-work.ts`.
    - **UTGSU Summer Cycle bursary:** bookmark once a summer conference (AIED or CICM) is confirmed.
 
 Resolved 2026-05-16: 2026-05-15 audit fully closed — lean-workspace public (session 4), backtesting public + paper-v1 release (session 5), dad-trading stays private with honest /about copy (session 6). All link checks pass.
+
+### Done in session 9 (2026-06-01)
+
+- **algo-traders monorepo restructure:** `backtesting/` and `live/` merged into `davidcagoh/algo-traders`. Old standalone repos (`davidcagoh/backtesting`, `davidcagoh/algo-traders-live`) deleted.
+- **Site link fixes:** GitHub link for Algo Traders updated `davidcagoh/backtesting` → `davidcagoh/algo-traders`. Live dashboard link added (`algo-traders-dashboard.vercel.app`, 30d dry-run in progress, ends 2026-06-20).
+- **Dead component purge:** deleted 41 unused shadcn `ui/` components + orphaned `ManusDialog.tsx` + `Map.tsx`. Only 12 of 52 ui/ components were imported; rest were default shadcn install never cleaned up.
 
 ### Done in session 6 (2026-05-16, this session)
 
