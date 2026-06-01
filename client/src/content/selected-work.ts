@@ -68,12 +68,10 @@ export const selectedWork: WorkGroup[] = [
         branch: "Autonomous quant research",
         title: "Algo Traders",
         kicker: "Six-layer evaluation stack for laptop-scale quant; portfolio-aware kill criterion",
-        // The release-asset PDF on the backtesting repo (tag paper-v1) is the citable version;
-        // /writeups/ is the site-hosted copy. We surface only writeup here — citers find paper-v1
-        // via the GitHub link → Releases tab. Avoids two clicks landing on the same PDF.
         links: [
           { label: "writeup", href: "/writeups/algo-traders-2026-05-16.pdf" },
-          { label: "GitHub", href: "https://github.com/davidcagoh/backtesting" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/algo-traders" },
+          { label: "live", href: "https://algo-traders-dashboard.vercel.app" },
           { label: "Lark client", href: "https://github.com/davidcagoh/feishu" },
         ],
       },
