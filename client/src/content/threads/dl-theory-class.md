@@ -44,9 +44,9 @@ The first stress test was an MBTI quiz. The engine reaches the same predicted ty
 
 [Live: adaptive-quiz-personality.vercel.app →](https://adaptive-quiz-personality.vercel.app)
 
-[Code on GitHub →](https://github.com/davidcagoh/adaptive-quiz-personality)
+[Code on GitHub →](https://github.com/davidcagoh/mbti-quiz-adaptive-engine)
 
-The user-facing applications of the engine — the Khan-style mastery dashboard pipeline in particular — sit on [thread four](/threads/built-for-people).
+The user-facing applications of the engine — Quizvid, a patent-pending mastery-tree system accepted to AIED 2026 Interactive Events and presented 2026-07-02, in particular — sit on [thread four](/threads/built-for-people).
 
 ## Tl;dr
 

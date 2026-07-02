@@ -2,7 +2,7 @@
 
 Personal academic site for David Goh. Single repo: source + GitHub Actions Pages deploy.
 
-**Last updated:** 2026-06-01 (session 9)
+**Last updated:** 2026-07-02 (session 10)
 
 ## Live state
 
@@ -45,56 +45,27 @@ site picks up changes only via `selected-work.ts`.
 
 1. **Action needed:**
    - **Email Ashton Anderson with `7U7CH9`** — Murdock Aubry cs.LG window (5–7d from 2026-05-16) expired ~2026-05-23. Anderson is Plan B; Roger Grosse is Plan C.
+   - **LinkedIn Post 3** — drafted and held since session 3, staged for the AIED acceptance trigger (now fired 2026-07-02). Publish if still desired.
+   - **Confirm `quizvid-aied-2026.pdf`** is the camera-ready version, not the submission draft, now that the paper has been presented.
 
 2. **Watching (no action):**
-   - AIED 2026 notification for adaptive-learner (overdue from "late May"). On accept: open-source via `opensource-pipeline`, add GitHub link, publish LinkedIn Post 3. On reject: pivot to LBR / UMAP / ITS / L@S.
-   - SocArXiv v2 moderation for sg-redistricting paper (expected ~2026-05-21, may be approved — check OSF).
+   - SocArXiv v2 moderation for sg-redistricting paper (expected ~2026-05-21, now well overdue — check OSF directly).
    - Cook math.* endorsement reply for simplicial + SSB.
-   - **CICM 2026 presentation-only deadline June 15 (Ljubljana, Sept 21–25):** SSB or JEPA-LO viable once arXiv ID exists. Submit after endorsement lands.
+   - **CICM 2026 presentation-only deadline June 15 (Ljubljana, Sept 21–25):** check whether this was already missed — today is 2026-07-02.
    - **jepa-rho-recovery (paper-2):** ready to feature on site once paper-v1 GitHub release is tagged (same trigger as JEPA-LO).
-   - **UTGSU Summer Cycle bursary:** bookmark once a summer conference (AIED or CICM) is confirmed.
+   - **UTGSU Summer Cycle bursary:** bookmark now that AIED 2026 is confirmed as the qualifying summer conference.
+
+Resolved 2026-07-02: AIED 2026 accepted and presented — `adaptive-learner` flipped public, Quizvid promoted to lead item on the DLT "Adaptive optimization engines" branch (renamed from "Optimizers & optimization — the adaptive engine, two instances") with full `paper · Live · GitHub` link set. See session 10 in `session-log.md`.
 
 Resolved 2026-05-16: 2026-05-15 audit fully closed — lean-workspace public (session 4), backtesting public + paper-v1 release (session 5), dad-trading stays private with honest /about copy (session 6). All link checks pass.
 
-### Done in session 9 (2026-06-01)
+### Recent sessions
 
-- **algo-traders monorepo restructure:** `backtesting/` and `live/` merged into `davidcagoh/algo-traders`. Old standalone repos (`davidcagoh/backtesting`, `davidcagoh/algo-traders-live`) deleted.
-- **Site link fixes:** GitHub link for Algo Traders updated `davidcagoh/backtesting` → `davidcagoh/algo-traders`. Live dashboard link added (`algo-traders-dashboard.vercel.app`, 30d dry-run in progress, ends 2026-06-20).
-- **Dead component purge:** deleted 41 unused shadcn `ui/` components + orphaned `ManusDialog.tsx` + `Map.tsx`. Only 12 of 52 ui/ components were imported; rest were default shadcn install never cleaned up.
+Full narrative detail for every session lives in `session-log.md` (recent) and `session-log-archive.md` (archived, >14 days old). Highlights:
 
-### Done in session 6 (2026-05-16, this session)
-
-- **Full live-deploy link verification:** all 15 external links across sessions 4 + 5 return 200 (HEAD checks). Old `algo-traders-2026-05-10.pdf` correctly 404s.
-- **/about narrative refresh:** Algo Traders paragraph rewritten — surfaces the six-layer evaluation stack as the actual contribution (was stale: *"Article not yet released publicly"*).
-- **dad-trading closed:** resolved-as-private in `public-assets.md`, dropped from open-items. Final entry from 2026-05-15 audit.
-- **`public-assets.md` housekeeping:** three private-repos rows updated to current state (lean-workspace + dad-trading resolved, adaptive-learner correctly gated on AIED notification).
-- **Portrait squish fixed:** session-3 had force-resized the 3:2 original (4898×3265) directly to 400×400 webp. Re-cropped a 1600×1600 square centered on the face from the original (recovered via git history), resized to 400×400. `objectPosition: 55% 25%` is now a no-op (square→square) but left in place.
-
-### Done in session 5 (2026-05-16, earlier)
-
-- **`davidcagoh/backtesting` flipped public** with README polish (lead with paper, fix broken `../writeup-2026-05-10.md` parent link, snapshot 2026-05-10 → 2026-05-16), empty placeholder dirs removed.
-- **Tag `paper-v1` + release** on backtesting with `algo-traders-2026-05-16.pdf` (14-page single-column LaTeX, six-layer evaluation stack) as release asset.
-- **Site bullet rewritten:** kicker → *"Six-layer evaluation stack for laptop-scale quant"*; links now `paper · writeup · GitHub · feishu`. Stale 2026-05-10 PDF replaced by 2026-05-16 principled writeup.
-- **Decision logged:** release-asset hosting (not Zenodo) for the algo-traders paper, matching JEPA pattern. Zenodo trigger remains external submission or stable v1.
-
-### Done in session 4 (2026-05-16, earlier)
-
-- **Adaptive-learner surfaced for AIED 2026** — added `writeup` (paper PDF) + `demo` (YouTube) to thread-4 bullet; rewrote kicker to reflect substance. GitHub link held until AIED notification per adaptive-learner wiki strategy.
-- **sg-redistricting-2025 added to thread 4** with `preprint` (SocArXiv) + `GitHub` links. Set GH repo description.
-- **sg-redistricting paper v2 submitted to SocArXiv** mid-session (after the original `p7q2m_v1` upload preceded session-17 robustness work that materially changed §3 statistics + §4/§7 disclosures). Site URL updated to versionless `p7q2m`.
-- **lean-workspace flipped to public** with MIT, README, Zenodo DOI `10.5281/zenodo.20225881`, tag `v0.1-methodology-public`. Thread-1 harness bullet now `(GitHub · DOI)`.
-- **JEPA paper hosted** as GitHub release asset on `jepa-learning-order` (tag `paper-v1`). Thread-1 JEPA bullet now `(paper · GitHub)`.
-- **Three Lean sub-repo READMEs** (jepa / ssb / simplicial) upgraded with "Result" sections.
-- **Supabase `adaptive-quiz` project restored** from INACTIVE (MBTI quiz Vercel deploy works again).
-- **JEPA cs.LG endorsement plan reset:** Papyan ghosted ~3 weeks; sent same code `7U7CH9` to Murdock Aubry (AppMath cohortmate + arXiv 2407.07810 ICLR 2025 cs.LG + Papyan co-author).
-- **Thread-1 narrative** in `agent-assisted-research.md`: removed Papyan name-drop from JEPA attribution.
-
-### Done in session 3 (2026-05-16, earlier)
-
-- Resized `feature.jpg` → `feature.webp` (1.1MB → 14KB at 400×400, quality 85). Updated `home.ts` src reference.
-- Deleted unused `headshot-npc.jpg` (17MB).
-- Added GitHub descriptions for `feishu`, `citation-networks`, `robust-literature-discovery`.
-- Investigated `backtesting` vs `backtester`: separate repos, not a rename. `algo-traders/backtesting` points to private `davidcagoh/backtesting`; public `davidcagoh/backtester` is unrelated HMM trading work.
+- **Session 10 (2026-07-02):** AIED 2026 presented; adaptive-learner made public; DLT optimizer branch renamed to "Adaptive optimization engines" and reordered with Quizvid leading; backfilled the missing session-9 log entry; archived sessions 5–8.
+- **Session 9 (2026-06-01):** algo-traders monorepo restructure (`backtesting` + `live` merged into `davidcagoh/algo-traders`); 41 dead shadcn components purged.
+- **Sessions 1–8 (2026-05-11 through 2026-05-25):** v1→v3 site build-out, four-thread IA, branch-pattern IA for umbrella projects, 2026-05-15 link audit and its resolution (lean-workspace, backtesting, dad-trading), portrait fix. See archive for full detail.
 
 ## Deferred / parking lot
 

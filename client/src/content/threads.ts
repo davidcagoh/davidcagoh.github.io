@@ -29,8 +29,8 @@ export const threads: Thread[] = [
     path: "/threads/dl-theory-class",
     kicker: "Thread three",
     title: "Deep Learning Theory",
-    lede: "Probably my favourite class in U of T. Lots of daydreams spun off into sidequests — a research-grade taxonomy of inductive bottlenecks on one branch, an adaptive Bayesian quiz engine (later powering an MBTI test and an AIED-2026 mastery-tree demo) on the other.",
-    chips: ["Meta-priors umbrella", "Adaptive engine", "MBTI quiz", "quizvid"],
+    lede: "Probably my favourite class in U of T. Lots of daydreams spun off into sidequests — a research-grade taxonomy of inductive bottlenecks on one branch, an adaptive Bayesian quiz engine (later powering an MBTI test and Quizvid, a patent-pending mastery-tree system accepted to AIED 2026) on the other.",
+    chips: ["Meta-priors umbrella", "Adaptive optimization engines", "Adaptive MBTI quiz", "Quizvid (AIED 2026)"],
   },
   {
     slug: "built-for-people",

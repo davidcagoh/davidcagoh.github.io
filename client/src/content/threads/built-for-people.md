@@ -20,13 +20,17 @@ Read-only by construction: no broker API, no execution surface. The audited wind
 
 *Private repo, whitelist-gated frontend, not publicly linked. In daily use on the real portfolio, ten years of trade history.*
 
-## Mastery dashboards for learners
+## Mastery dashboards for learners — Quizvid (patent pending)
 
-A Khan-Academy-style mastery pipeline that turns any course PDF into an offline dashboard with a skill-tree UI. The intent is the thing I always wanted as a student: a way to *locate yourself* in a body of material and get nudged toward the next productive thing to learn.
+A Khan-Academy-style mastery pipeline that turns any course PDF into an offline dashboard with a skill-tree UI. The intent is the thing I always wanted as a student: a way to *locate yourself* in a body of material and get nudged toward the next productive thing to learn. Accepted to AIED 2026 Interactive Events; presented 2026-07-02.
 
 A map-reduce ontology extractor (parallel per-chapter Gemini 2.5 calls) builds a concept DAG from the source PDF; a human-in-the-loop pass cleans it; the dashboard then presents the skill tree and runs short diagnostic checks against it. The diagnostic checks are powered by the adaptive-questionnaire engine from [thread three](/threads/dl-theory-class) — the same Bayesian engine, wired to a different schema. Output is a single `mastery.html` that runs from `file://`. Open for anyone to use :D
 
 [Live: quizvid.vercel.app →](https://quizvid.vercel.app)
+
+[Paper: AIED 2026 Interactive Events →](/writeups/quizvid-aied-2026.pdf)
+
+[Code on GitHub →](https://github.com/davidcagoh/adaptive-learner)
 
 ## Tl;dr
 

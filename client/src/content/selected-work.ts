@@ -147,23 +147,23 @@ export const selectedWork: WorkGroup[] = [
         kicker: "Synthesis test: under a noise sweep, priors with near-perfect clean accuracy fail with distinct shapes — smooth, cliff, catastrophic. The comparative axis isn't who wins, it's how each fails.",
       },
       {
-        branch: "Optimizers & optimization — the adaptive engine, two instances",
-        title: "MBTI quiz",
-        kicker: "Bayesian active-question-selection — converges on Myers-Briggs type in ~40 questions vs 80, ~89.7% accuracy",
+        branch: "Adaptive optimization engines",
+        title: "Quizvid adaptive learning system (patent pending)",
+        kicker: "Same engine, placement-tests-into-mastery-tree from arbitrary course PDFs. Accepted to AIED 2026 Interactive Events; presented 2026-07-02.",
         links: [
-          { label: "writeup", href: "/writeups/mbti-adaptive-engine.pdf" },
-          { label: "Live", href: "https://adaptive-quiz-personality.vercel.app" },
-          { label: "GitHub", href: "https://github.com/davidcagoh/mbti-quiz-adaptive-engine" },
+          { label: "paper", href: "/writeups/quizvid-aied-2026.pdf" },
+          { label: "Live", href: "https://quizvid.vercel.app" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/adaptive-learner" },
         ],
       },
       {
-        branch: "Optimizers & optimization — the adaptive engine, two instances",
-        title: "Adaptive Khan-style mastery",
-        kicker: "Same engine, placement-tests-into-mastery-tree from arbitrary course PDFs. AIED 2026 Interactive Events demo.",
+        branch: "Adaptive optimization engines",
+        title: "Adaptive MBTI quiz",
+        kicker: "Bayesian active-question-selection — converges on Myers-Briggs type in ~40 questions vs 80, ~89.7% accuracy",
         links: [
-          { label: "writeup", href: "/writeups/quizvid-aied-2026.pdf" },
-          { label: "Live", href: "https://quizvid.vercel.app" },
-          { label: "demo", href: "https://youtu.be/F2JhBMiRQqU" },
+          { label: "paper", href: "/writeups/mbti-adaptive-engine.pdf" },
+          { label: "Live", href: "https://adaptive-quiz-personality.vercel.app" },
+          { label: "GitHub", href: "https://github.com/davidcagoh/mbti-quiz-adaptive-engine" },
         ],
       },
     ],
@@ -214,8 +214,8 @@ export const selectedWork: WorkGroup[] = [
         // Repo is private; deploy is not for public viewing.
       },
       {
-        title: "Adaptive learner (quizvid)",
-        kicker: "See above under DL theory class. Skill-tree mastery system over arbitrary course PDFs.",
+        title: "Quizvid",
+        kicker: "See above under DL theory class. Adaptive learning system (patent pending); skill-tree mastery over arbitrary course PDFs. Accepted to AIED 2026 Interactive Events; presented 2026-07-02.",
         // Primary entry lives on the DL theory thread (instance of the adaptive engine,
         // with full link set). One-link cross-reference here matches the convention used
         // by Simplicial geometry / TDA on the resurrected-from-duke thread.

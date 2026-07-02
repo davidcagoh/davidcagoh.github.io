@@ -34,3 +34,8 @@
 **Decision date:** 2026-05-17
 **Why:** Earlier we shipped one-shot `website-brief.md` files inside each linked project repo so the site agent had a prefab summary to pull from. After a few months the briefs drifted — the meta-priors brief (sessions 4–7) ended up describing 3 sub-projects when reality was 8. They were one-way: written, used once, never refreshed.
 **Implication:** No more `website-brief.md`. The site agent should read the linked repo's own README / OUTLINE / report files directly — those are the artifacts the project owner actually maintains. If a per-repo synopsis is needed for the site, generate it on demand from current state, do not persist it. All ten existing briefs (lean-workspace, jepa-learning-order, simplicial-latent-geometry, stochastic-search-bounds, MScAC-initiatives, citation-networks, algo-traders, dad-trading, adaptive-learner, meta-priors) were deleted on 2026-05-17.
+
+## Full link parity within a branch
+**Decision date:** 2026-07-02
+**Why:** The DLT "Adaptive optimization engines" branch groups two products built on the same underlying Bayesian active-question-selection engine (Quizvid, MBTI quiz). Their link sets had drifted apart over time (Quizvid had `writeup · Live · demo`, MBTI had `writeup · Live · GitHub`) purely because of which artifact happened to exist first, not because of any real difference between the projects.
+**Implication:** When a branch expresses "one engine, multiple instances," give every item in the branch the same link shape. Prefer the label that reads the same across both (`paper` over `writeup`) so the parallel structure is visible without reading the kickers.
