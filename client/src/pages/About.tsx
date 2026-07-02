@@ -1,5 +1,5 @@
 /*
-About / personal page. The four thread narratives stitched into one scroll.
+About / personal page. The five thread narratives stitched into one scroll.
 Thread metadata (title, kicker, lede) comes from content/threads.ts; bodies
 come from content/threads/*.md.
 */
@@ -9,12 +9,14 @@ import { Link } from "wouter";
 import { MarkdownProse } from "@/components/MarkdownProse";
 import { threads } from "@/content/threads";
 
+import adaptiveOptimizationEngines from "@/content/threads/adaptive-optimization-engines.md?raw";
 import agentAssistedResearch from "@/content/threads/agent-assisted-research.md?raw";
 import builtForPeople from "@/content/threads/built-for-people.md?raw";
 import dlTheoryClass from "@/content/threads/dl-theory-class.md?raw";
 import resurrectedFromDuke from "@/content/threads/resurrected-from-duke.md?raw";
 
 const bodies: Record<string, string> = {
+  "adaptive-optimization-engines": adaptiveOptimizationEngines,
   "agent-assisted-research": agentAssistedResearch,
   "resurrected-from-duke": resurrectedFromDuke,
   "dl-theory-class": dlTheoryClass,
@@ -42,7 +44,7 @@ export default function About() {
             <p className="mt-4 text-base leading-7 text-muted-foreground">
               Eighty percent of my brainpower goes on sidequests spun off from something I read,
               overheard, or was trying to build so I could do less work. What follows is less an
-              about-me than a history of the daydreams — four threads I keep pulling on.
+              about-me than a history of the daydreams — five threads I keep pulling on.
             </p>
           </header>
 

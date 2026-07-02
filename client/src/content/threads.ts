@@ -9,9 +9,17 @@ export interface Thread {
 
 export const threads: Thread[] = [
   {
+    slug: "adaptive-optimization-engines",
+    path: "/threads/adaptive-optimization-engines",
+    kicker: "Thread one",
+    title: "Adaptive optimization engines",
+    lede: "Daydreams from my Deep Learning class at U of T. At first a fun sidequest, it's grown into a conference presentation and a pending patent.",
+    chips: ["Quizvid adaptive mastery system", "Adaptive MBTI quiz"],
+  },
+  {
     slug: "agent-assisted-research",
     path: "/threads/agent-assisted-research",
-    kicker: "Thread one",
+    kicker: "Thread two",
     title: "Agent-assisted research",
     lede: "Two robots iterating on Math proofs, five feet apart because they're not-",
     chips: ["Lean + Aristotle harness", "JEPA", "Stochastic Search Bounds", "Simplicial geometry", "Algo Traders"],
@@ -19,7 +27,7 @@ export const threads: Thread[] = [
   {
     slug: "resurrected-from-duke",
     path: "/threads/resurrected-from-duke",
-    kicker: "Thread two",
+    kicker: "Thread three",
     title: "Revived Duke projects",
     lede: "Stuff from undergrad that I picked back up later. The original advisors are now my collaborators!",
     chips: ["Citation networks (X. Sun)", "Simplicial geometry (N. Cook)", "TDA (P. Bendich)"],
@@ -27,18 +35,18 @@ export const threads: Thread[] = [
   {
     slug: "dl-theory-class",
     path: "/threads/dl-theory-class",
-    kicker: "Thread three",
+    kicker: "Thread four",
     title: "Deep Learning Theory",
-    lede: "Probably my favourite class in U of T. Lots of daydreams spun off into sidequests — a research-grade taxonomy of inductive bottlenecks on one branch, an adaptive Bayesian quiz engine (later powering an MBTI test and Quizvid, a patent-pending mastery-tree system accepted to AIED 2026) on the other.",
-    chips: ["Meta-priors umbrella", "Adaptive optimization engines", "Adaptive MBTI quiz", "Quizvid (AIED 2026)"],
+    lede: "Probably my favourite class in U of T.",
+    chips: ["Meta-priors umbrella"],
   },
   {
     slug: "built-for-people",
     path: "/threads/built-for-people",
-    kicker: "Thread four",
+    kicker: "Thread five",
     title: "Built for people around me",
     lede: "Random tools I made to help people.",
-    chips: ["MScAC trio", "Dad's trading", "Mastery dashboards"],
+    chips: ["MScAC trio", "Dad's trading"],
   },
 ];
 

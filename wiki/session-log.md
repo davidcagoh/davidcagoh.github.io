@@ -1,5 +1,59 @@
 # Session log
 
+## 2026-07-03 (session 11) — Adaptive optimization engines copy rewrite
+
+### What was done
+
+User supplied new copy for the "Adaptive optimization engines" thread (title, lede, both item kickers, cross-reference line) to replace the session-10 draft wording:
+
+- **`threads.ts` lede rewritten:** "Daydreams from my Deep Learning class at U of T. At first a fun sidequest, it's grown into a conference presentation and a pending patent." Chips renamed to match new item titles.
+- **Quizvid entry retitled** "Quizvid adaptive learning system (patent pending)" → **"Quizvid adaptive mastery system"** (patent-pending now stated in the kicker, not the title). New kicker describes the pipeline as "a recursive LLM protocol" building a skill tree, diagnosed by "a Bayesian-Laplacian engine (patent pending)" — replaces the prior "same engine, placement-tests..." phrasing. Link order changed to `Live · Paper · Github` (was `paper · Live · GitHub`); label casing now matches user's copy exactly (`Paper`, `Github` capitalized).
+- **Adaptive MBTI quiz kicker rewritten:** "The first iteration of the Bayesian question selector; it converges on your MBTI type at high accuracy in <20 questions." This **changes the accuracy claim** — prior copy said "~40 questions vs 80, ~89.7% accuracy"; new copy says "<20 questions" and drops the specific accuracy number. Confirmed with user this was an intentional content change, not an oversight.
+- **Built-for-people cross-reference simplified** to bare text, no links: "Quizvid adaptive mastery system — See above under Adaptive optimization engines." Deliberately drops the `Live` link that cross-references elsewhere on the site normally carry (2026-05-17 convention) — explicit user request, not an oversight.
+- **`/about` long-form narrative (`adaptive-optimization-engines.md`) updated to match:** "map-reduce ontology extractor" → "recursive LLM protocol"; MBTI numbers updated to "<20 questions" (dropped the 89.7% figure); Quizvid section retitled to match. User confirmed wanting the two pages in sync rather than leaving /about with the older, more detailed numbers.
+- **DL theory class lede shortened.** Was a two-sentence summary that referenced the now-departed adaptive-engine sidequest ("A second sidequest... grew large enough to become its own thread") — stale cross-reference now that the split is done. Cut to just "Probably my favourite class in U of T." per explicit request.
+- **MBTI links dropped from `/about`.** The three link lines under the Adaptive MBTI quiz section (Live, Paper, GitHub) removed per explicit request — that section is now prose-only in the long-form narrative. Home-page bullet still carries all three links; scope of the ask was `/about` only.
+- **Quizvid paper link swapped to the full preprint.** Both Home (`selected-work.ts`) and `/about` (`adaptive-optimization-engines.md`) now link `client/public/writeups/quizvid-preprint-2026-06-28.pdf` (copied from `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner/paper/preprint.pdf`) instead of the shorter `quizvid-aied-2026.pdf` AIED submission. User initially considered keeping `/about` on the original AIED submission but decided both pages should point at the full-length preprint.
+- **Old `quizvid-aied-2026.pdf` removed** (`git rm`) once no longer referenced anywhere on the site, matching the session-5 precedent of dropping superseded writeup PDFs rather than leaving them orphaned.
+
+### Decisions made
+
+None new — this is a content/copy update to structures already decided in session 10.
+
+### State at end of session
+
+Build green (`pnpm check` + `pnpm build` after every edit). Dev server used for live preview per user request, stopped at end of session. Committed and pushed via `/session-wrap`.
+
+### What to do next session
+
+Same carried-forward items: LinkedIn Post 3, Anderson endorsement email, SocArXiv/Cook/CICM watches. Also: if the MBTI "<20 questions" claim is meant to reflect an actual engine improvement (vs. the previous "~40 questions, 89.7%" figure), consider whether `mbti-adaptive-engine.pdf` itself needs a re-run/update so the linked paper's numbers don't contradict the site copy. And: confirm whether `quizvid-preprint-2026-06-28.pdf` (the new full-length paper) supersedes or complements the MBTI technical report — no comparable "full preprint" swap has happened for MBTI yet.
+
+---
+
+## 2026-07-02 (session 10 — extension) — Adaptive optimization engines split into its own thread
+
+### What was done
+
+Same-day continuation. User asked to move "Adaptive optimization engines" above Agent-assisted research. Since the rendering model only lets whole threads reorder (branch position is fixed to its parent thread), split it into a standalone fifth thread rather than reordering all of DL theory class:
+
+- **New thread added** in `threads.ts`: `adaptive-optimization-engines`, positioned first, kicker "Thread one." Remaining four threads renumbered (two through five).
+- **New narrative file** `content/threads/adaptive-optimization-engines.md` — combines the MBTI section previously in `dl-theory-class.md` with the Quizvid/mastery-dashboard section previously in `built-for-people.md` into one self-contained thread narrative.
+- **`dl-theory-class.md` trimmed** — the "Adaptive-learning engine" section removed, replaced with a one-line bridge pointing to the new thread. Bottleneck taxonomy content untouched.
+- **`built-for-people.md` trimmed** — the full "Mastery dashboards for learners" section (description, links) replaced with a short cross-reference pointing to the new thread, matching the existing cross-reference convention.
+- **`About.tsx` updated** — imports and registers the new markdown file in the `bodies` map; intro copy "four threads" → "five threads."
+- **`selected-work.ts` restructured** — new top-level `WorkGroup` for `adaptive-optimization-engines` (Quizvid + MBTI quiz, no `branch` field needed since it's now the whole thread); the branch removed from the `dl-theory-class` group; the built-for-people Quizvid cross-reference kicker updated to point at the new thread instead of "DL theory class."
+- **Decisions logged:** thread-split rationale, and a generalization of the earlier "link parity" decision to cover threads as well as branches (see `decisions.md`).
+
+### State at end of session
+
+Build green (`pnpm check` + `pnpm build`). Not yet committed/pushed — holding for user confirmation.
+
+### What to do next session
+
+Same open items as the prior session-10 entry below (LinkedIn Post 3, Anderson endorsement email, SocArXiv/Cook/CICM watches, confirm quizvid PDF is camera-ready).
+
+---
+
 ## 2026-07-02 (session 10) — AIED 2026 presented + adaptive optimization engines restructure
 
 ### What was done
@@ -24,7 +78,7 @@
 
 ### State at end of session
 
-Build green (`pnpm check` + `pnpm build` both pass). All four links on both Adaptive optimization engines items verified 200 (`adaptive-learner`, `quizvid.vercel.app`, `mbti-quiz-adaptive-engine`, `adaptive-quiz-personality.vercel.app`). Not yet committed/pushed.
+Build green (`pnpm check` + `pnpm build` both pass). All four links on both Adaptive optimization engines items verified 200 (`adaptive-learner`, `quizvid.vercel.app`, `mbti-quiz-adaptive-engine`, `adaptive-quiz-personality.vercel.app`). Committed and pushed as `f149ebf`.
 
 ### What to do next session
 

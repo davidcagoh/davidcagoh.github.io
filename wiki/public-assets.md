@@ -4,7 +4,18 @@ Linked from `selected-work.ts` on the site. When editing a README, pushing fixes
 or auditing what's public, work from the local path on the left and push to the
 GitHub repo on the right.
 
-## Thread one — Agent-assisted research
+## Thread one — Adaptive optimization engines
+
+| Local path                                                    | GitHub                                             | Surfaces as                    |
+|-----------------------------------------------------------------|-----------------------------------------------------|----------------------------------|
+| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` (public 2026-07-02)  | Quizvid adaptive learning system (patent pending) |
+| _pending_                                                        | `davidcagoh/mbti-quiz-adaptive-engine`             | Adaptive MBTI quiz               |
+
+Notes:
+- Split out of thread four (DL theory class) into its own thread on 2026-07-02, positioned first — see decision in `decisions.md`.
+- Both entries carry the same three-link set: `paper · Live · GitHub`.
+
+## Thread two — Agent-assisted research
 
 | Local path                                                   | GitHub                                                          | Surfaces as                          |
 |--------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------|
@@ -18,7 +29,7 @@ Notes:
 - `algo-traders` is a *local* umbrella directory containing two separate public GitHub repos. There is no single `algo-traders` repo on GitHub.
 - The Algo Traders writeup lives at `client/public/writeups/algo-traders-2026-05-16.pdf` and is served at `/writeups/algo-traders-2026-05-16.pdf`. The bullet links: `paper` (release asset on `backtesting`, tag `paper-v1`) · `writeup` · `GitHub` (backtesting) · `feishu`.
 
-## Thread two — Resurrected from Duke
+## Thread three — Resurrected from Duke
 
 | Local path                                                                  | GitHub                                       | Surfaces as                  |
 |-----------------------------------------------------------------------------|----------------------------------------------|------------------------------|
@@ -31,21 +42,19 @@ Notes:
 - `citation-dynamics/` is a subdirectory of the citation-networks repo, **not** its own GitHub repo. Site links to the umbrella; visitors find citation-dynamics inside.
 - Simplicial + TDA appear on multiple threads (cross-referenced in each kicker). One repo, several threads.
 
-## Thread three — DL theory class
+## Thread four — DL theory class
 
 | Local path | GitHub                                                          | Surfaces as                                     |
 |------------|-----------------------------------------------------------------|-------------------------------------------------|
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/meta-priors/information-bottleneck-nested-optimizers` | `davidcagoh/information-bottleneck-nested-optimizers` | Information bottleneck + nested optimisers |
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/meta-priors/tda-for-time-series` | `davidcagoh/tda-for-time-series` | TDA for time series                             |
-| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner` | `davidcagoh/adaptive-learner` (public 2026-07-02) | Quizvid adaptive learning system (patent pending), branch "Adaptive optimization engines" |
-| _pending_  | `davidcagoh/mbti-quiz-adaptive-engine`                          | Adaptive MBTI quiz, branch "Adaptive optimization engines" |
 
 Notes:
 - The `meta-priors/` umbrella is **public as of session 7 (2026-05-17)** at `davidcagoh/meta-priors`. Tracked tree: `README.md`, `OUTLINE.md`, six in-repo sub-experiment folders, two submodules. Wiki, paper drafts, refs, and the embedding-reg factfile are gitignored (local-only).
 - `engineered-features-mlp/`, `weight-decay-bayes/`, `pinn-demo/`, `low-rank-implicit-reg/`, `rff-vs-tda-benchmark/`, `embedding-reg-ladder/` are now publicly visible *inside* the meta-priors repo (no standalone GitHub repo each). For the DLT thread bullets, link `davidcagoh/meta-priors` (or a deep-link to the sub-folder) rather than expecting each to have its own repo.
-- **2026-07-02:** the "Optimizers & optimization — the adaptive engine, two instances" branch was renamed **"Adaptive optimization engines"** and reordered — Quizvid now leads (AIED 2026 acceptance), MBTI quiz second. Both entries carry the same three-link set: `paper · Live · GitHub`.
+- **2026-07-02:** the adaptive-engine sidequest (Quizvid, MBTI quiz) was split out into its own thread — see "Thread one" above. This thread now only carries the bottleneck/regularization taxonomy.
 
-## Thread four — Built for people around me
+## Thread five — Built for people around me
 
 | Local path                                                                  | GitHub                                                                          | Deploy                                              | Surfaces as                              |
 |-----------------------------------------------------------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------|------------------------------------------|
@@ -53,7 +62,7 @@ Notes:
 | `/Users/davidgoh/LocalFiles/2025-26-Work/MScAC-initiatives/projects/internship-board`  | `davidcagoh/mscac-initiatives/.../internship-board`                   | `cs.toronto.edu/~daveed/` (passcode-gated, private) | MScAC internship board                   |
 | `/Users/davidgoh/LocalFiles/2025-26-Work/MScAC-initiatives/projects/apps-tracker`      | `davidcagoh/mscac-initiatives/.../apps-tracker`                       | `mscac-applications-tracker-8critjxiy-davidcagohs-projects.vercel.app` (stale, Supabase paused) | MScAC anonymous applications tracker |
 | `/Users/davidgoh/LocalFiles/2025-26-Ongoing/dad-trading`                    | `davidcagoh/dad-trading`                                                        | `web-zeta-six-45.vercel.app` (publicness unclear)   | Dad's trading co-pilot                   |
-| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner`            | `davidcagoh/adaptive-learner`                                                   | `quizvid.vercel.app`                                | Quizvid (cross-ref; primary entry on thread three) |
+| `/Users/davidgoh/LocalFiles/2025-2026-Complete/adaptive-learner`            | `davidcagoh/adaptive-learner`                                                   | `quizvid.vercel.app`                                | Quizvid (cross-ref; primary entry on thread one) |
 
 Notes:
 - MScAC trio lives in a single monorepo (`mscac-initiatives`) under `projects/*`. Site links to each sub-path; visitors see one project per link, not the umbrella.

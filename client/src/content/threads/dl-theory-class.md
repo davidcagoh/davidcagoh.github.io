@@ -36,17 +36,7 @@ That recognition turned into an independent study I've been carrying alongside t
 
 - **RFF vs TDA, head-to-head.** On a 4-regime classification task with a test-time noise sweep: RFF, truncated FFT, and TDA all reach near-perfect clean accuracy, but fail with distinct *shapes* — POWER degrades smoothly, RFF holds a ceiling then cliffs, TDA collapses catastrophically at σ=0.2 because additive noise destroys H₁. The interesting axis isn't who wins, it's how each fails. [GitHub →](https://github.com/davidcagoh/rff-vs-tda-benchmark)
 
-## Adaptive-learning engine — the optimiser thread continued
-
-The optimiser ideas from the same class went somewhere I didn't expect: into a questionnaire engine. If "learn the trait that explains the most variance with the fewest steps" is just an item-information optimiser on a Bayesian belief, then the engine you need is small, NumPy-only, and works across any assessment domain you can write a schema for. The same engine drives MBTI, Big Five, political compass, and academic mastery checks.
-
-The first stress test was an MBTI quiz. The engine reaches the same predicted type as a full 80-item battery in one-fifth of the questions. I run the Kalman rank-1 update entirely in the browser so it's lightweight with low latency.
-
-[Live: adaptive-quiz-personality.vercel.app →](https://adaptive-quiz-personality.vercel.app)
-
-[Code on GitHub →](https://github.com/davidcagoh/mbti-quiz-adaptive-engine)
-
-The user-facing applications of the engine — Quizvid, a patent-pending mastery-tree system accepted to AIED 2026 Interactive Events and presented 2026-07-02, in particular — sit on [thread four](/threads/built-for-people).
+The optimiser ideas from the same class also spun off a second sidequest — an adaptive Bayesian quiz engine that ended up powering an MBTI test and Quizvid, a patent-pending mastery-tree system accepted to AIED 2026. That grew large enough to become its own thread: see [thread one, Adaptive optimization engines](/threads/adaptive-optimization-engines).
 
 ## Tl;dr
 
