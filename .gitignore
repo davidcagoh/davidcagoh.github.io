@@ -115,3 +115,10 @@ temp/
 client/public/__manus__/version.json
 .manus-logs/
 endorsement-email-murdock.txt
+
+# CV source fonts (not needed to view the compiled PDF)
+cv/*.ttf
+cv/archive/
+
+# Project research wiki (not for public repo)
+wiki/
