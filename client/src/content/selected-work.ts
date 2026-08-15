@@ -40,6 +40,10 @@ export const selectedWork: WorkGroup[] = [
     threadSlug: "adaptive-optimization-engines",
     items: [
       {
+        title: "Cold-Start Placement on a Skill Tree: A Graph-Laplacian Bayesian Prior for Course-Agnostic Mastery Learning",
+        kicker: "Accepted to WAILS 2026 (3rd Workshop on Artificial Intelligence with and for Learning Sciences). Camera-ready in progress.",
+      },
+      {
         title: "Quizvid adaptive mastery system",
         kicker: "A recursive LLM protocol creates a skill tree out of any collection of source PDFs. Then a Bayesian-Laplacian engine (patent pending) conducts a mathematically optimal diagnostic test. Presented at AIED 2026 Interactive Events.",
         links: [
@@ -68,6 +72,15 @@ export const selectedWork: WorkGroup[] = [
           { label: "harness GitHub", href: "https://github.com/davidcagoh/lean-workspace" },
           { label: "DOI", href: "https://doi.org/10.5281/zenodo.20225881" },
         ],
+        title: "Signed Decomposition of the Regression Structure via Linear JEPA Training: An Algorithm, Empirical Validation, and a Machine-Checked Proof",
+        kicker: "Goh, D. (2026). AIS 2026: The 12th International Artificial Intelligence Symposium, Castiglione della Pescaia, Italy.",
+        links: [
+          { label: "Paper", href: "/writeups/jepa-rho-recovery-ais2026-camera-ready.pdf" },
+          { label: "Github", href: "https://github.com/davidcagoh/jepa-rho-recovery" },
+        ],
+      },
+      {
+        branch: "Formal verification under Lean + Aristotle",
         title: "JEPA training dynamics",
         kicker: "Influential features learned first",
         links: [
